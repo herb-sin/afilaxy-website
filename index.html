@@ -3,379 +3,381 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Afilaxy - Encontre ajuda para asma rapidamente. Conecte-se com pessoas próximas que possuem bombinha de asma em emergências.">
-    <meta name="keywords" content="asma, bombinha, emergência, ajuda, aplicativo, saúde">
-    <title>Afilaxy - Encontre Ajuda para Asma Rapidamente</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Afilaxy - Cuidando da Saúde da Mulher</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #e91e63;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #e91e63;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            padding: 4rem 0;
+            text-align: center;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        /* Card Sections */
+        .section {
+            background: white;
+            margin: 2rem 0;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .section h2 {
+            color: #e91e63;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section h2 i {
+            font-size: 1.5rem;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(45deg, #e91e63, #f06292);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: all 0.3s;
+            margin: 10px 5px;
+            box-shadow: 0 4px 15px rgba(233, 30, 99, 0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(233, 30, 99, 0.4);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .btn-whatsapp {
+            background: linear-gradient(45deg, #25d366, #128c7e);
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        }
+
+        /* Health Topics Section */
+        .health-topics {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+        }
+
+        .topics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .topic-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .topic-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .topic-card h3 {
+            color: #e91e63;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section {
+                margin: 1rem 0;
+                padding: 1.5rem;
+            }
+
+            .btn {
+                display: block;
+                margin: 10px 0;
+                text-align: center;
+            }
+
+            .topics-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section {
+            animation: fadeInUp 0.6s ease-out;
+        }
+    </style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <nav class="nav">
-            <div class="container">
-                <div class="nav-brand">
-                    <img src="https://via.placeholder.com/40x40/007bff/ffffff?text=A" alt="Afilaxy" class="logo">
-                    <span class="brand-name">Afilaxy</span>
-                </div>
-                <div class="nav-menu">
-                    <a href="#como-funciona" class="nav-link">Como Funciona</a>
-                    <a href="#recursos" class="nav-link">Recursos</a>
-                    <a href="#faq" class="nav-link">FAQ</a>
-                    <a href="#contato" class="nav-link">Contato</a>
-                </div>
-                <div class="nav-toggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
+    <header>
+        <nav class="container">
+            <div class="logo">Afilaxy</div>
+            <ul class="nav-links">
+                <li><a href="#projeto">Projeto</a></li>
+                <li><a href="#app">App</a></li>
+                <li><a href="#comunidade">Comunidade</a></li>
+                <li><a href="#saude">Saúde</a></li>
+            </ul>
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1 class="hero-title">Ache a pessoa mais próxima com a <span class="highlight">"bombinha" de Asma</span></h1>
-                    <p class="hero-description">Em momentos de emergência respiratória, cada segundo conta. O Afilaxy conecta você rapidamente com pessoas próximas que possuem bombinha de asma para te ajudar.</p>
-                    <div class="hero-buttons">
-                        <a href="#" class="btn btn-primary">
-                            <i class="fab fa-apple"></i>
-                            Download iOS
-                        </a>
-                        <a href="#" class="btn btn-secondary">
-                            <i class="fab fa-google-play"></i>
-                            Download Android
-                        </a>
-                    </div>
-                    <div class="hero-stats">
-                        <div class="stat">
-                            <span class="stat-number">1000+</span>
-                            <span class="stat-label">Usuários Cadastrados</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">50+</span>
-                            <span class="stat-label">Emergências Atendidas</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">24/7</span>
-                            <span class="stat-label">Disponibilidade</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="hero-image">
-                    <img src="https://via.placeholder.com/500x600/f8f9fa/007bff?text=App+Screenshot" alt="Afilaxy App" class="app-screenshot">
-                </div>
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Afilaxy</h1>
+                <p>Cuidando da saúde e bem-estar da mulher com tecnologia e apoio comunitário</p>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Como Funciona -->
-    <section id="como-funciona" class="how-it-works">
         <div class="container">
-            <h2 class="section-title">Como Funciona</h2>
-            <p class="section-subtitle">Três passos simples para receber ajuda em emergências respiratórias</p>
-            <div class="steps">
-                <div class="step">
-                    <div class="step-icon">
-                        <i class="fas fa-map-marker-alt"></i>
-                    </div>
-                    <h3 class="step-title">1. Localize</h3>
-                    <p class="step-description">O app identifica sua localização e encontra pessoas próximas com bombinha de asma disponível.</p>
-                </div>
-                <div class="step">
-                    <div class="step-icon">
-                        <i class="fas fa-phone"></i>
-                    </div>
-                    <h3 class="step-title">2. Conecte</h3>
-                    <p class="step-description">Enviamos um alerta para os usuários mais próximos que podem te ajudar imediatamente.</p>
-                </div>
-                <div class="step">
-                    <div class="step-icon">
-                        <i class="fas fa-heart"></i>
-                    </div>
-                    <h3 class="step-title">3. Receba Ajuda</h3>
-                    <p class="step-description">Conecte-se com alguém próximo que pode fornecer assistência respiratória de emergência.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+            <section id="projeto" class="section">
+                <h2><i class="fas fa-heart"></i> Sobre o Projeto Afilaxy</h2>
+                <p>O Afilaxy é uma iniciativa inovadora dedicada à promoção da saúde feminina, oferecendo recursos educacionais, suporte comunitário e ferramentas digitais para empoderar mulheres em sua jornada de bem-estar.</p>
+                <p>Nossa missão é criar um ambiente seguro e acolhedor onde mulheres possam acessar informações confiáveis sobre saúde, conectar-se com outras mulheres e encontrar o apoio necessário para cuidar de si mesmas.</p>
+            </section>
 
-    <!-- Recursos -->
-    <section id="recursos" class="features">
-        <div class="container">
-            <div class="features-content">
-                <div class="features-text">
-                    <h2 class="section-title">Recursos Principais</h2>
-                    <div class="feature-list">
-                        <div class="feature">
-                            <i class="fas fa-shield-alt"></i>
-                            <div>
-                                <h3>Segurança Total</h3>
-                                <p>Todos os dados são criptografados e seguem rigorosos padrões de privacidade médica.</p>
-                            </div>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-clock"></i>
-                            <div>
-                                <h3>Resposta Rápida</h3>
-                                <p>Algoritmo otimizado para encontrar ajuda em menos de 2 minutos.</p>
-                            </div>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-users"></i>
-                            <div>
-                                <h3>Comunidade Solidária</h3>
-                                <p>Rede de pessoas dispostas a ajudar em emergências respiratórias.</p>
-                            </div>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-mobile-alt"></i>
-                            <div>
-                                <h3>Interface Simples</h3>
-                                <p>Design intuitivo para uso fácil mesmo em momentos de estresse.</p>
-                            </div>
-                        </div>
-                    </div>
+            <section id="app" class="section">
+                <h2><i class="fas fa-mobile-alt"></i> Nova Versão do App</h2>
+                <p>Baixe agora a segunda versão do aplicativo Afilaxy! Esta versão traz novos recursos, melhor interface e mais funcionalidades para cuidar da sua saúde.</p>
+                <div style="text-align: center; margin-top: 1.5rem;">
+                    <a href="#" class="btn" onclick="downloadApp()">
+                        <i class="fas fa-download"></i> Baixar Afilaxy v2.0 (.apk)
+                    </a>
+                    <p style="font-size: 0.9rem; color: #666; margin-top: 0.5rem;">
+                        <i class="fas fa-info-circle"></i> Versão em desenvolvimento - ainda não disponível nas lojas de aplicativos
+                    </p>
                 </div>
-                <div class="features-image">
-                    <img src="https://via.placeholder.com/400x500/f8f9fa/007bff?text=Features" alt="Recursos do App">
-                </div>
-            </div>
-        </div>
-    </section>
+            </section>
 
-    <!-- Privacidade -->
-    <section class="privacy">
-        <div class="container">
-            <div class="privacy-content">
-                <h2 class="section-title">Privacidade & Segurança</h2>
-                <p class="section-subtitle">Seus dados médicos são sagrados para nós</p>
-                <div class="privacy-features">
-                    <div class="privacy-feature">
-                        <i class="fas fa-lock"></i>
-                        <h3>Criptografia End-to-End</h3>
-                        <p>Todas as comunicações são protegidas com criptografia de nível militar.</p>
-                    </div>
-                    <div class="privacy-feature">
-                        <i class="fas fa-user-shield"></i>
-                        <h3>Conformidade LGPD</h3>
-                        <p>Totalmente em conformidade com a Lei Geral de Proteção de Dados.</p>
-                    </div>
-                    <div class="privacy-feature">
-                        <i class="fas fa-eye-slash"></i>
-                        <h3>Dados Anônimos</h3>
-                        <p>Sua identidade permanece protegida durante todo o processo.</p>
-                    </div>
+            <section id="comunidade" class="section">
+                <h2><i class="fab fa-whatsapp"></i> Junte-se à Nossa Comunidade</h2>
+                <p>Faça parte do nosso grupo no WhatsApp! Conecte-se com outras mulheres, compartilhe experiências, tire dúvidas e receba apoio da nossa comunidade acolhedora.</p>
+                <div style="text-align: center; margin-top: 1.5rem;">
+                    <a href="#" class="btn btn-whatsapp" onclick="joinWhatsApp()">
+                        <i class="fab fa-whatsapp"></i> Entrar no Grupo WhatsApp
+                    </a>
                 </div>
-            </div>
-        </div>
-    </section>
+            </section>
 
-    <!-- Depoimentos -->
-    <section class="testimonials">
-        <div class="container">
-            <h2 class="section-title">O que nossos usuários dizem</h2>
-            <div class="testimonials-grid">
-                <div class="testimonial">
-                    <div class="testimonial-content">
-                        <p>"O Afilaxy salvou minha vida. Em uma crise de asma, consegui ajuda em menos de 3 minutos."</p>
+            <section id="saude" class="section health-topics">
+                <h2><i class="fas fa-shield-alt"></i> Orientações sobre Saúde da Mulher</h2>
+                <p>Acesse informações importantes sobre diversos tópicos relacionados à saúde e segurança da mulher. Conhecimento é poder e proteção.</p>
+                
+                <div class="topics-grid">
+                    <div class="topic-card">
+                        <h3><i class="fas fa-exclamation-triangle"></i> Tipos de Violência</h3>
+                        <p>Conheça os diferentes tipos de violência contra a mulher e saiba identificar situações de risco.</p>
                     </div>
-                    <div class="testimonial-author">
-                        <img src="https://via.placeholder.com/50x50/007bff/ffffff?text=M" alt="Maria">
-                        <div>
-                            <h4>Maria Silva</h4>
-                            <span>São Paulo, SP</span>
-                        </div>
+                    
+                    <div class="topic-card">
+                        <h3><i class="fas fa-phone"></i> Como Denunciar</h3>
+                        <p>Saiba como e onde denunciar casos de violência. Canais de apoio: 180, 190, delegacias especializadas.</p>
                     </div>
-                </div>
-                <div class="testimonial">
-                    <div class="testimonial-content">
-                        <p>"Como médico, recomendo o Afilaxy para todos os meus pacientes asmáticos. É revolucionário."</p>
+                    
+                    <div class="topic-card">
+                        <h3><i class="fas fa-balance-scale"></i> Seus Direitos</h3>
+                        <p>Conheça os direitos de quem denuncia e as medidas protetivas disponíveis pela Lei Maria da Penha.</p>
                     </div>
-                    <div class="testimonial-author">
-                        <img src="https://via.placeholder.com/50x50/007bff/ffffff?text=J" alt="João">
-                        <div>
-                            <h4>Dr. João Santos</h4>
-                            <span>Pneumologista</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial">
-                    <div class="testimonial-content">
-                        <p>"Sinto-me mais segura sabendo que posso ajudar outras pessoas com asma na minha região."</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <img src="https://via.placeholder.com/50x50/007bff/ffffff?text=A" alt="Ana">
-                        <div>
-                            <h4>Ana Costa</h4>
-                            <span>Rio de Janeiro, RJ</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ -->
-    <section id="faq" class="faq">
-        <div class="container">
-            <h2 class="section-title">Perguntas Frequentes</h2>
-            <div class="faq-list">
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>O Afilaxy substitui o atendimento médico de emergência?</h3>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Não. O Afilaxy é uma ferramenta de apoio comunitário. Em casos graves, sempre procure atendimento médico profissional ou chame o SAMU (192).</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>Como posso me cadastrar como colaborador?</h3>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Baixe o app, crie sua conta e marque a opção "Quero ajudar outros usuários". Você receberá notificações quando alguém próximo precisar de ajuda.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>O aplicativo funciona offline?</h3>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Algumas funcionalidades básicas funcionam offline, mas para conectar com outros usuários é necessária conexão com internet.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>É gratuito?</h3>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Sim! O Afilaxy é completamente gratuito. Nossa missão é salvar vidas, não lucrar com emergências médicas.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contato -->
-    <section id="contato" class="contact">
-        <div class="container">
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h2 class="section-title">Entre em Contato</h2>
-                    <p>Tem dúvidas ou sugestões? Estamos aqui para ajudar!</p>
-                    <div class="contact-methods">
-                        <div class="contact-method">
-                            <i class="fas fa-envelope"></i>
-                            <div>
-                                <h3>Email</h3>
-                                <p>contato@afilaxy.com</p>
-                            </div>
-                        </div>
-                        <div class="contact-method">
-                            <i class="fas fa-phone"></i>
-                            <div>
-                                <h3>Telefone</h3>
-                                <p>+55 (11) 9999-9999</p>
-                            </div>
-                        </div>
-                        <div class="contact-method">
-                            <i class="fas fa-clock"></i>
-                            <div>
-                                <h3>Horário</h3>
-                                <p>24/7 para emergências</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="contact-form">
-                    <form>
-                        <div class="form-group">
-                            <input type="text" placeholder="Seu nome" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" placeholder="Seu email" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea placeholder="Sua mensagem" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-brand">
-                        <img src="https://via.placeholder.com/40x40/007bff/ffffff?text=A" alt="Afilaxy" class="logo">
-                        <span class="brand-name">Afilaxy</span>
-                    </div>
-                    <p>Conectando pessoas em emergências respiratórias. Juntos, salvamos vidas.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                    </div>
-                </div>
-                <div class="footer-section">
-                    <h3>Links Úteis</h3>
-                    <ul>
-                        <li><a href="#como-funciona">Como Funciona</a></li>
-                        <li><a href="#recursos">Recursos</a></li>
-                        <li><a href="#faq">FAQ</a></li>
-                        <li><a href="#contato">Contato</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Legal</h3>
-                    <ul>
-                        <li><a href="/privacy">Política de Privacidade</a></li>
-                        <li><a href="/terms">Termos de Uso</a></li>
-                        <li><a href="/cookies">Política de Cookies</a></li>
-                        <li><a href="/medical">Aviso Médico</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Download</h3>
-                    <div class="download-buttons">
-                        <a href="#" class="download-btn">
-                            <i class="fab fa-apple"></i>
-                            <div>
-                                <span>Download na</span>
-                                <strong>App Store</strong>
-                            </div>
-                        </a>
-                        <a href="#" class="download-btn">
-                            <i class="fab fa-google-play"></i>
-                            <div>
-                                <span>Baixar no</span>
-                                <strong>Google Play</strong>
-                            </div>
+                    
+                    <div class="topic-card">
+                        <h3><i class="fas fa-hands-helping"></i> Grupos de Apoio</h3>
+                        <p>Encontre redes de apoio e organizações que oferecem acolhimento e suporte especializado.</p>
+                        <a href="https://gamma.app/docs/Flor-de-Cacto-Acolhimento-e-Reflexoes-na-Periferia-2y7g9bjis5qwm4t/preview?mode=doc" 
+                           target="_blank" class="btn btn-secondary" style="margin-top: 1rem; font-size: 0.9rem;">
+                            <i class="fas fa-flower"></i> Conheça o Flor de Cacto
                         </a>
                     </div>
                 </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Afilaxy. Todos os direitos reservados.</p>
-                <p><strong>AVISO MÉDICO:</strong> Este aplicativo não substitui atendimento médico profissional. Em emergências graves, procure ajuda médica imediata.</p>
-            </div>
+
+                <div style="text-align: center; margin-top: 2rem;">
+                    <a href="#" class="btn btn-secondary" onclick="showHealthResources()">
+                        <i class="fas fa-book-medical"></i> Ver Mais Recursos de Saúde
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Afilaxy. Cuidando da saúde da mulher com carinho e dedicação.</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem;">
+                <i class="fas fa-heart" style="color: #e91e63;"></i> Desenvolvido com amor para empoderar mulheres
+            </p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        function downloadApp() {
+            // Aqui você pode adicionar o link real do .apk quando estiver disponível
+            alert('O download do aplicativo será iniciado em breve. Por favor, aguarde enquanto preparamos o arquivo para você.');
+            // window.open('link-para-download-do-apk.apk', '_blank');
+        }
+
+        function joinWhatsApp() {
+            // Substitua pelo link real do grupo do WhatsApp
+            alert('Redirecionando para o grupo do WhatsApp...');
+            // window.open('https://chat.whatsapp.com/seu-link-do-grupo', '_blank');
+        }
+
+        function showHealthResources() {
+            alert('Em breve: mais recursos e orientações sobre saúde da mulher estarão disponíveis nesta seção.');
+        }
+
+        // Smooth scrolling para links internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Adicionar efeito de animação quando elementos entram na tela
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(30px)';
+            section.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+            observer.observe(section);
+        });
+    </script>
 </body>
 </html>
