@@ -5,14 +5,8 @@ Este aplicativo segue a Lei Geral de Proteção de Dados Pessoais (LGPD), garant
 ## Quais dados coletamos
 
 No cadastro e uso do aplicativo, coletamos:
-- Nome completo
-- RG e CPF
 - Localização (GPS)
 - E-mail
-- Gênero
-- Data de nascimento
-- Diagnóstico médico (asma e/ou DPOC)
-- Dados sobre gravidade do quadro, medicamentos, alergias e contato de emergência
 - Dados técnicos do dispositivo (para autenticação e segurança)
 - Dados de uso e interação com o aplicativo
 
