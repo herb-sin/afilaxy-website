@@ -1,383 +1,177 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Afilaxy - Encontre a pessoa mais próxima com uma bombinha de Asma</title>
+    <title>Afilaxy - Conexão que Salva Vidas</title>
+    <meta name="description" content="Encontre a pessoa mais próxima com uma bombinha de asma em casos de emergência.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #2c3e50;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header */
-        header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #e91e63;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #2c3e50;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: #e91e63;
-        }
-
-        /* Hero Section */
-        .hero {
-            margin-top: 80px;
-            padding: 4rem 0;
-            text-align: center;
-            color: white;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-
-        /* Card Sections */
-        .section {
-            background: white;
-            margin: 2rem 0;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .section:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-        }
-
-        .section h2 {
-            color: #e91e63;
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .section h2 i {
-            font-size: 1.5rem;
-        }
-
-        /* Buttons */
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background: linear-gradient(45deg, #e91e63, #f06292);
-            color: white;
-            text-decoration: none;
-            border-radius: 25px;
-            font-weight: bold;
-            transition: all 0.3s;
-            margin: 10px 5px;
-            box-shadow: 0 4px 15px rgba(233, 30, 99, 0.3);
-        }
-
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(233, 30, 99, 0.4);
-        }
-
-        .btn-secondary {
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
-        }
-
-        .btn-whatsapp {
-            background: linear-gradient(45deg, #25d366, #128c7e);
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
-        }
-
-        /* Health Topics Section */
-        .health-topics {
-            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
-        }
-
-        .topics-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .topic-card {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-        }
-
-        .topic-card:hover {
-            transform: translateY(-3px);
-        }
-
-        .topic-card h3 {
-            color: #e91e63;
-            margin-bottom: 0.5rem;
-        }
-
-        /* Footer */
-        footer {
-            background: #2c3e50;
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
-            margin-top: 3rem;
-        }
-
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .hero p {
-                font-size: 1rem;
-            }
-
-            .section {
-                margin: 1rem 0;
-                padding: 1.5rem;
-            }
-
-            .btn {
-                display: block;
-                margin: 10px 0;
-                text-align: center;
-            }
-
-            .topics-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .section {
-            animation: fadeInUp 0.6s ease-out;
-        }
-    </style>
+    <link rel="icon" type="image/png" href="assets/48px.png">
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <header>
-        <nav class="container">
-            <div class="logo">Afilaxy</div>
+    <!-- Navigation -->
+    <header id="header">
+        <nav class="container nav-container">
+            <div class="logo">
+                <img src="assets/512px.png" alt="Afilaxy Logo" class="logo-img">
+            </div>
             <ul class="nav-links">
-                <li><a href="#projeto">Projeto</a></li>
-                <li><a href="#app">App</a></li>
-                <li><a href="#comunidade">Comunidade</a></li>
-                <li><a href="#saude">Saúde</a></li>
-                <li><a href="privacidade.html">Privacidade</a></li>
+                <li><a href="#home">Início</a></li>
+                <li><a href="#features">Funcionalidades</a></li>
+                <li><a href="#community">Comunidade</a></li>
+                <li><a href="#about">Sobre</a></li>
+                <li><a href="#download" class="btn btn-primary btn-sm">Baixar App</a></li>
             </ul>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
         </nav>
     </header>
 
     <main>
-        <section class="hero">
-            <div class="container">
-                <h1>Afilaxy</h1>
-                <p>Encontre a pessoa mais próxima com uma bombinha de Asma</p>
-            </div>
-        </section>
-
-        <div class="container">
-            <section id="projeto" class="section">
-                <h2><i class="fas fa-lungs"></i> Sobre o Projeto Afilaxy</h2>
-                <p>O Afilaxy é um app que acha a pessoa mais próxima com uma 'bombinha de Asma' em casos emergenciais. Estimulamos as relações entre pacientes para que se tornem agentes em sua jornada de Saúde e bem-estar.</p>
-                <p>Nossa missão é facilitar o acesso à 'bombinha' de Salbutamol em casos emergenciais.</p>
-            </section>
-
-            <section id="app" class="section">
-                <h2><i class="fas fa-mobile-alt"></i> Nova Versão do App</h2>
-                <p>Estamos desenvolvendo a segunda versão do aplicativo para Android! Esta versão traz novos recursos, melhor interface e mais funcionalidades para cuidar da sua saúde.</p>
-                <div style="text-align: center; margin-top: 1.5rem;">
-                    <a href="https://github.com/herb-sin/afilaxy" target="_blank" class="btn">
-                        <i class="fab fa-github"></i> Acessar Código Fonte no GitHub
-                    </a>
-                    <p style="font-size: 0.9rem; color: #666; margin-top: 0.5rem;">
-                        <i class="fas fa-info-circle"></i> Acesse o repositório para baixar o APK e visualizar o código fonte
-                    </p>
-                </div>
-            </section>
-
-            <section id="comunidade" class="section">
-                <h2><i class="fab fa-whatsapp"></i> Junte-se à Nossa Comunidade</h2>
-                <p>Faça parte do nosso grupo no WhatsApp! Conecte-se com a comunidade, compartilhe experiências, tire dúvidas e receba apoio.</p>
-                <div style="text-align: center; margin-top: 1.5rem;">
-                    <a href="https://chat.whatsapp.com/Fit1k3jGNWB6n3sKQIkbqo" target="_blank" class="btn btn-whatsapp">
-                        <i class="fab fa-whatsapp"></i> Entrar no Grupo WhatsApp
-                    </a>
-                </div>
-            </section>
-
-            <section id="saude" class="section health-topics">
-                <h2><i class="fas fa-shield-alt"></i> Orientações sobre Saúde</h2>
-                <p>Acesse informações importantes sobre diversos tópicos relacionados à saúde e segurança da pessoa com Asma. Conhecimento é poder e proteção.</p>
-                
-                <div class="topics-grid">
-                    <div class="topic-card">
-                        <h3><i class="fas fa-exclamation-triangle"></i> Tipos de Violência contra a Mulher</h3>
-                        <p>Conheça os diferentes tipos de violência contra a mulher e saiba identificar situações de risco, como e onde denunciar casos de violência, os direitos de quem denuncia e as medidas protetivas disponíveis pela Lei Maria da Penha.</p>
-                    </div>
-                    
-                    <div class="topic-card">
-                        <h3><i class="fas fa-hands-helping"></i> Grupos de Apoio</h3>
-                        <p>Encontre redes de apoio e organizações que oferecem acolhimento e suporte especializado.</p>
-                        <a href="https://gamma.app/docs/Flor-de-Cacto-Acolhimento-e-Reflexoes-na-Periferia-2y7g9bjis5qwm4t/preview?mode=doc" 
-                           target="_blank" class="btn btn-secondary" style="margin-top: 1rem; font-size: 0.9rem;">
-                            <i class="fas fa-flower"></i> Conheça o Flor de Cacto
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="container hero-container">
+                <div class="hero-content fade-in">
+                    <span class="badge">Em testes Alpha</span>
+                    <h1>Conexão que <span class="highlight">Salva Vidas</span></h1>
+                    <p>O Afilaxy conecta você à pessoa mais próxima com uma bombinha de asma em situações de emergência.
+                        Uma rede de solidariedade na palma da sua mão.</p>
+                    <div class="hero-buttons">
+                        <a href="#download" class="btn btn-primary">
+                            <i class="fab fa-android"></i> Baixar para Android
                         </a>
                     </div>
                 </div>
-
-                <div class="topics-grid">
-                    <div class="topic-card">
-                        <h3><i class="fas fa-spray-can"></i> Fique longe de spray de pimenta!</h3>
-                        <p>Evite situações em que o spray de pimenta possa ser utilizado!</p>
-                    </div>
-
-                <div style="text-align: center; margin-top: 2rem;">
-                    <a href="#" class="btn btn-secondary" onclick="showHealthResources()">
-                        <i class="fas fa-book-medical"></i> Ver Mais Recursos de Saúde
-                    </a>
+                <div class="hero-image fade-in">
+                    <img src="assets/hero_image.png" alt="Comunidade Afilaxy"
+                        onerror="this.src='https://placehold.co/600x400/00BFA5/ffffff?text=Afilaxy+App'">
                 </div>
-            </section>
-        </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2>Funcionalidades Principais</h2>
+                    <p>Tecnologia e comunidade unidas para sua segurança</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="icon-box">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>Geolocalização</h3>
+                        <p>Localize rapidamente a ajuda mais próxima em momentos críticos com nosso mapa em tempo real.
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon-box">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Segurança</h3>
+                        <p>Autenticação robusta e validação de usuários para garantir uma rede de apoio confiável.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon-box">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Comunidade</h3>
+                        <p>Troque experiências, receba dicas de saúde e participe de eventos educativos.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Community Section -->
+        <section id="community" class="section bg-light">
+            <div class="container">
+                <div class="community-wrapper">
+                    <div class="community-content">
+                        <h2>Junte-se à Nossa Comunidade</h2>
+                        <p>Não está sozinho nessa jornada. Participe do nosso grupo no WhatsApp para trocar informações,
+                            tirar dúvidas e fortalecer nossa rede de apoio.</p>
+                        <a href="https://chat.whatsapp.com/E7l7ML8tn3qDIY7ltcINCK?mode=hqrt3" target="_blank"
+                            class="btn btn-whatsapp">
+                            <i class="fab fa-whatsapp"></i> Entrar no grupo do Whatsapp
+                        </a>
+                    </div>
+                    <div class="community-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">18+</span>
+                            <span class="stat-label">Membros</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">24/7</span>
+                            <span class="stat-label">Suporte</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Alpha Tester Section -->
+        <section id="download" class="section text-center">
+            <div class="container">
+                <div class="download-box">
+                    <h2>Seja um Testador Alpha</h2>
+                    <p>O Afilaxy está em fase de testes fechados. Para ter acesso antecipado, precisamos adicionar seu
+                        e-mail à lista de testadores do Google Play.</p>
+                    <div class="download-buttons">
+                        <a href="https://wa.me/5511970657225?text=Ol%C3%A1!%20Quero%20testar%20o%20Afilaxy.%20Meu%20e-mail%20do%20Google%20Play%20%C3%A9%3A%20"
+                            target="_blank" class="btn btn-primary btn-lg">
+                            <i class="fab fa-whatsapp"></i> Solicitar Acesso Alpha
+                        </a>
+                    </div>
+                    <p class="small-text mt-2">A Google Play exige 14 dias de testes 'fechados' antes de liberar o app
+                        para todo o Brasil</p>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>
-        <div class="container">
-            <p>&copy; 2024 Afilaxy. Cuidando da saúde.</p>
-            <p style="margin-top: 0.5rem; font-size: 0.9rem;">
-                <i class="fas fa-lungs" style="color: #e91e63;"></i> Site em desenvolvimento!
-            </p>
-            <p style="margin-top: 1rem; font-size: 0.8rem;">
-                <a href="privacidade.html" style="color: #fff; text-decoration: underline;">Política de Privacidade</a>
-            </p>
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <div class="logo">
+                    <img src="assets/512px.png" alt="Afilaxy Logo" class="logo-img">
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Links Rápidos</h4>
+                <ul>
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#features">Funcionalidades</a></li>
+                    <li><a href="privacidade.html">Privacidade</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h4>Redes Sociais</h4>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/aflxy/" target="_blank" aria-label="Instagram"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="https://www.x.com/afilaxy" target="_blank" aria-label="X (Twitter)"><i
+                            class="fab fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/company/afilaxy/" target="_blank" aria-label="LinkedIn"><i
+                            class="fab fa-linkedin"></i></a>
+                    <a href="https://www.facebook.com/Afilaxy" target="_blank" aria-label="Facebook"><i
+                            class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom text-center">
+            <p>&copy; 2026 Afilaxy. Todos os direitos reservados.</p>
         </div>
     </footer>
 
-    <script>
-        function downloadApp() {
-            // Aqui você pode adicionar o link real do .apk quando estiver disponível
-            alert('O download do aplicativo será iniciado em breve. Por favor, aguarde enquanto preparamos o arquivo para você.');
-            // window.open('link-para-download-do-apk.apk', '_blank');
-        }
-
-        function joinWhatsApp() {
-            // Substitua pelo link real do grupo do WhatsApp
-            alert('Redirecionando para o grupo do WhatsApp...');
-            // window.open('https://chat.whatsapp.com/seu-link-do-grupo', '_blank');
-        }
-
-        function showHealthResources() {
-            alert('Em breve: mais recursos e orientações sobre saúde da mulher estarão disponíveis nesta seção.');
-        }
-
-        // Smooth scrolling para links internos
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Adicionar efeito de animação quando elementos entram na tela
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.section').forEach(section => {
-            section.style.opacity = '0';
-            section.style.transform = 'translateY(30px)';
-            section.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
-            observer.observe(section);
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
+
 </html>
