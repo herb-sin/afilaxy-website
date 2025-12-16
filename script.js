@@ -37,26 +37,61 @@ const nextButton = document.querySelector('.carousel-button--right');
 const prevButton = document.querySelector('.carousel-button--left');
 const dotsNav = document.querySelector('.carousel-nav');
 
-const slideWidth = slides[0].getBoundingClientRect().width;
+let slideWidth = slides[0].getBoundingClientRect().width;
 
 // Arrange the slides next to one another
 const setSlidePosition = (slide, index) => {
     slide.style.left = slideWidth * index + 'px';
 };
-slides.forEach(setSlidePosition);
 
-// Generate dots dynamically
-// We show 3 slides at a time, so the last valid index is slides.length - 3
-const maxIndex = Math.max(0, slides.length - 3);
-
-for (let i = 0; i <= maxIndex; i++) {
-    const dot = document.createElement('button');
-    dot.classList.add('carousel-indicator');
-    if (i === 0) dot.classList.add('current-slide');
-    dotsNav.appendChild(dot);
+// Determine visible slides based on screen width
+const getVisibleSlides = () => {
+    if (window.innerWidth >= 1024) return 3;
+    if (window.innerWidth >= 768) return 2;
+    return 1;
 }
 
-const dots = Array.from(dotsNav.children);
+let maxIndex = Math.max(0, slides.length - getVisibleSlides());
+let dots = [];
+
+const createDots = () => {
+    dotsNav.innerHTML = ''; // Clear existing dots
+    maxIndex = Math.max(0, slides.length - getVisibleSlides());
+
+    for (let i = 0; i <= maxIndex; i++) {
+        const dot = document.createElement('button');
+        dot.classList.add('carousel-indicator');
+        if (i === 0) dot.classList.add('current-slide');
+        dotsNav.appendChild(dot);
+    }
+    dots = Array.from(dotsNav.children);
+}
+
+// Initialize
+slides.forEach(setSlidePosition);
+createDots();
+
+// Resize Handler
+window.addEventListener('resize', () => {
+    slideWidth = slides[0].getBoundingClientRect().width;
+    slides.forEach(setSlidePosition);
+    createDots();
+
+    // Reset to first slide to avoid alignment issues
+    const currentSlide = track.querySelector('.current-slide');
+    const currentDot = dotsNav.querySelector('.current-slide');
+
+    // Move to start
+    track.style.transform = 'translateX(0)';
+    currentSlide.classList.remove('current-slide');
+    slides[0].classList.add('current-slide');
+
+    // Update dots
+    if (currentDot) currentDot.classList.remove('current-slide');
+    dots[0].classList.add('current-slide');
+
+    hideShowArrows(slides, prevButton, nextButton, 0);
+});
 
 const moveToSlide = (track, currentSlide, targetSlide) => {
     track.style.transform = 'translateX(-' + targetSlide.style.left + ')';
@@ -128,6 +163,7 @@ dotsNav.addEventListener('click', e => {
 let autoPlayInterval;
 
 const startAutoPlay = () => {
+    stopAutoPlay(); // Clear any existing interval
     autoPlayInterval = setInterval(() => {
         const currentSlide = track.querySelector('.current-slide');
         let nextSlide = currentSlide.nextElementSibling;
@@ -174,32 +210,51 @@ const modalImg = document.getElementById("modalImage");
 const closeBtn = document.getElementsByClassName("close")[0];
 const carouselImages = document.querySelectorAll('.carousel-slide img');
 
+let lastFocusedElement;
+
 carouselImages.forEach(img => {
     img.addEventListener('click', function () {
+        lastFocusedElement = document.activeElement;
         modal.style.display = "flex";
         modal.style.alignItems = "center";
         modal.style.justifyContent = "center";
         modalImg.src = this.src;
         stopAutoPlay(); // Stop carousel when modal is open
+        closeBtn.focus();
     });
 });
 
-closeBtn.onclick = function () {
+const closeModal = () => {
     modal.style.display = "none";
     startAutoPlay(); // Resume carousel when modal is closed
-}
+    if (lastFocusedElement) lastFocusedElement.focus();
+};
+
+closeBtn.onclick = closeModal;
+
+// Allow closing with Enter/Space for accessibility
+closeBtn.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        closeModal();
+    }
+});
 
 modal.onclick = function (e) {
     if (e.target === modal) {
-        modal.style.display = "none";
-        startAutoPlay(); // Resume carousel when modal is closed
+        closeModal();
     }
 }
 
-// Close on Escape key
+// Close on Escape key and Focus Trap
 document.addEventListener('keydown', function (e) {
-    if (e.key === "Escape" && modal.style.display === "flex") {
-        modal.style.display = "none";
-        startAutoPlay(); // Resume carousel when modal is closed
+    if (modal.style.display === "flex") {
+        if (e.key === "Escape") {
+            closeModal();
+        } else if (e.key === "Tab") {
+            // Keep focus on the close button
+            e.preventDefault();
+            closeBtn.focus();
+        }
     }
 });
