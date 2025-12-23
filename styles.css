@@ -426,11 +426,13 @@ footer {
     gap: 2rem;
     justify-content: center;
     margin-top: 2rem;
+    flex-wrap: wrap;
 }
 
 .social-icons-large a {
     width: 64px;
     height: 64px;
+    flex-shrink: 0;
     background-color: var(--white);
     border-radius: 50%;
     display: flex;
