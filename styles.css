@@ -208,6 +208,32 @@ header {
     font-size: 1.125rem;
 }
 
+.btn-disabled {
+    background-color: #B0BEC5;
+    color: #ECEFF1;
+    box-shadow: none;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.btn-disabled:hover {
+    background-color: #B0BEC5;
+    transform: none;
+    box-shadow: none;
+}
+
+.coming-soon-badge {
+    background-color: #FFF3E0;
+    color: #F57C00;
+    padding: 0.25rem 0.75rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-left: 0.5rem;
+    vertical-align: middle;
+}
+
 /* Hero Section */
 .hero {
     padding-top: 160px;
@@ -432,6 +458,8 @@ footer {
 .social-icons-large a {
     width: 64px;
     height: 64px;
+    min-width: 64px;
+    min-height: 64px;
     flex-shrink: 0;
     background-color: var(--white);
     border-radius: 50%;
