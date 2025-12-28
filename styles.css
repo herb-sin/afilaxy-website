@@ -123,7 +123,7 @@ header {
 }
 
 .logo-img {
-    height: 40px;
+    height: 65px;
     width: auto;
 }
 
@@ -426,6 +426,11 @@ footer {
 
     .community-image {
         max-width: 90%;
+    }
+
+    /* Ajuste do logo para mobile */
+    .logo-img {
+        height: 50px;
     }
 }
 
