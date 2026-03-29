@@ -26,9 +26,10 @@ interface FormState {
   cnpj: string
   loading: boolean
   success: boolean
+  error: string
 }
 
-const initialForm: FormState = { name: '', email: '', phone: '', crm: '', cnpj: '', loading: false, success: false }
+const initialForm: FormState = { name: '', email: '', phone: '', crm: '', cnpj: '', loading: false, success: false, error: '' }
 
 const plans = [
   {
@@ -101,7 +102,7 @@ function PlanForm({ plan }: { plan: typeof plans[0] }) {
 
   const handleSubmit = async () => {
     if (!form.name || !form.email) { alert('Preencha nome e email.'); return }
-    setForm(f => ({ ...f, loading: true }))
+    setForm(f => ({ ...f, loading: true, error: '' }))
     try {
       await saveLead({
         name: form.name,
@@ -114,8 +115,10 @@ function PlanForm({ plan }: { plan: typeof plans[0] }) {
         segment: plan.id,
       })
       setForm(f => ({ ...f, success: true }))
-    } catch {
-      alert('Erro ao enviar. Tente novamente.')
+    } catch (err: unknown) {
+      const msg = err instanceof Error ? err.message : String(err)
+      console.error('[saveLead]', err)
+      setForm(f => ({ ...f, error: msg }))
     } finally {
       setForm(f => ({ ...f, loading: false }))
     }
@@ -153,6 +156,9 @@ function PlanForm({ plan }: { plan: typeof plans[0] }) {
       {plan.id === 'clinica' && (
         <input type="text" placeholder="CNPJ" value={form.cnpj} onChange={set('cnpj')}
           className="w-full rounded-xl border-2 border-gray-200 px-4 py-3 text-sm transition focus:border-primary focus:outline-none" />
+      )}
+      {form.error && (
+        <p className="rounded-xl bg-red-50 px-4 py-2 text-xs text-red-600">{form.error}</p>
       )}
       <button onClick={handleSubmit} disabled={form.loading}
         className="w-full rounded-pill bg-primary py-3 font-semibold text-white shadow-md transition hover:-translate-y-0.5 hover:bg-primary-dark disabled:opacity-60">
