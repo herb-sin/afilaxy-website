@@ -13,7 +13,7 @@ const values = [
   { icon: '📍', title: 'Alcance fora do consultório', desc: 'Apareça para pacientes fora do ambiente clínico.' },
   { icon: '📝', title: 'Autoridade de conteúdo', desc: 'Publique artigos educativos dentro do app e posicione-se como referência em saúde respiratória.' },
   { icon: '✅', title: 'Credibilidade verificada', desc: 'Badge de verificação via CRM/CFM — diferencia você de informações não confiáveis.' },
-  { icon: '❤️', title: 'Impacto social', desc: 'Associe sua marca a uma iniciativa que evangeliza o acesso à saúde respiratória no SUS.' },
+  { icon: '❤️', title: 'Impacto social', desc: 'Se associe a uma iniciativa que evangeliza o acesso à saúde respiratória no SUS.' },
 ]
 
 type PlanType = 'pneumologista' | 'alergologista' | 'fisioterapeuta' | 'clinica'
