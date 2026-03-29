@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import Carousel from '../components/Carousel'
 
 const journeyImages = [
@@ -10,13 +9,6 @@ const journeyImages = [
   { src: '/assets/photos/Stand CPBR14.jpeg', alt: 'Stand CPBR14' },
   { src: '/assets/photos/Pasted image.png', alt: 'Afilaxy' },
   { src: '/assets/photos/PythonBR.jpeg', alt: 'PythonBR' },
-]
-
-const stats = [
-  { value: '20M', label: 'brasileiros com asma', source: 'GINA 2023' },
-  { value: '80%', label: 'não seguem tratamento preventivo', source: '' },
-  { value: '2ª', label: 'doença respiratória crônica mais comum no mundo', source: '' },
-  { value: 'SUS', label: 'medicação gratuita disponível — falta adesão', source: '' },
 ]
 
 const steps = [
