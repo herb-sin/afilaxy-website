@@ -6,7 +6,7 @@ interface Props {
 
 export default function Carousel({ images }: Props) {
   const [index, setIndex] = useState(0)
-  const [lightbox, setLightbox] = useState<string | null>(null)
+  const [lightbox, setLightbox] = useState<number | null>(null)
   const timerRef = useRef<ReturnType<typeof setInterval>>()
   const [perView, setPerView] = useState(3)
 
@@ -31,11 +31,15 @@ export default function Carousel({ images }: Props) {
 
   // Keyboard for lightbox
   useEffect(() => {
-    if (!lightbox) return
-    const handler = (e: KeyboardEvent) => { if (e.key === 'Escape') setLightbox(null) }
+    if (lightbox === null) return
+    const handler = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setLightbox(null)
+      if (e.key === 'ArrowRight') setLightbox((i) => (i! + 1) % images.length)
+      if (e.key === 'ArrowLeft') setLightbox((i) => (i! - 1 + images.length) % images.length)
+    }
     document.addEventListener('keydown', handler)
     return () => document.removeEventListener('keydown', handler)
-  }, [lightbox])
+  }, [lightbox, images.length])
 
   return (
     <>
@@ -44,7 +48,7 @@ export default function Carousel({ images }: Props) {
           <div className="flex transition-transform duration-300 ease-in-out" style={{ transform: `translateX(-${index * (100 / perView)}%)` }}>
             {images.map((img, i) => (
               <div key={i} className="flex-shrink-0 cursor-pointer px-1" style={{ width: `${100 / perView}%` }}
-                onClick={() => setLightbox(img.src)}>
+                onClick={() => setLightbox(i)}>
                 <img src={img.src} alt={img.alt} className="h-72 w-full rounded-card object-cover" loading="lazy" />
               </div>
             ))}
@@ -73,10 +77,15 @@ export default function Carousel({ images }: Props) {
       </div>
 
       {/* Lightbox */}
-      {lightbox && (
+      {lightbox !== null && (
         <div className="fixed inset-0 z-[2000] flex items-center justify-center bg-black/90 backdrop-blur-sm" onClick={() => setLightbox(null)}>
           <button className="absolute right-6 top-4 text-4xl text-white transition hover:text-primary" onClick={() => setLightbox(null)}>×</button>
-          <img src={lightbox} alt="" className="max-h-[85vh] max-w-[90vw] rounded-lg object-contain" onClick={(e) => e.stopPropagation()} />
+          <button className="absolute left-4 top-1/2 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-white/20 text-3xl text-white transition hover:bg-white/40"
+            onClick={(e) => { e.stopPropagation(); setLightbox((i) => (i! - 1 + images.length) % images.length) }}>‹</button>
+          <img src={images[lightbox].src} alt={images[lightbox].alt} className="max-h-[85vh] max-w-[80vw] rounded-lg object-contain" onClick={(e) => e.stopPropagation()} />
+          <button className="absolute right-4 top-1/2 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-white/20 text-3xl text-white transition hover:bg-white/40"
+            onClick={(e) => { e.stopPropagation(); setLightbox((i) => (i! + 1) % images.length) }}>›</button>
+          <p className="absolute bottom-4 text-sm text-white/60">{lightbox + 1} / {images.length}</p>
         </div>
       )}
     </>

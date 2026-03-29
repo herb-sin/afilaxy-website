@@ -20,9 +20,9 @@ const stats = [
 ]
 
 const steps = [
-  { icon: '👥', title: 'Você tem Asma', desc: 'Compartilhamos a mesma dor; entendemos o que é viver com asma e o que significa não ter bombinha por perto.' },
-  { icon: '🤝', title: 'Você Compartilha sua Bombinha', desc: 'Quando alguém tem crise sem broncodilatador, você pode estar por perto e ajudar a salvar uma vida.' },
-  { icon: '❤️', title: 'Receba Ajuda em Emergências', desc: 'Em uma crise de asma, alguém pode estar por perto com a bombinha pra te ajudar!' },
+  { icon: '👥', title: 'Você tem Asma', desc: 'Compartilhamos a dor; sabemos o que é não ter bombinha em uma crise.' },
+  { icon: '🤝', title: 'Você pede ajuda', desc: 'Alguém pode estar por perto e te emprestar a bombinha; é possível usá-la sem encostar na boca!' },
+  { icon: '❤️', title: 'Você pode salvar uma vida', desc: 'Empreste sua bombinha a alguém que esteja em uma crise emergencial' },
 ]
 
 const values = [
@@ -41,40 +41,24 @@ export default function Home() {
             <img src="/assets/afilaxy_master_2025logo.svg" alt="Afilaxy" className="mb-4 h-28" />
             <span className="mb-3 inline-block rounded-pill bg-primary/10 px-4 py-1 text-sm font-semibold text-primary">Versão Beta</span>
             <h1 className="mb-4 text-4xl font-bold leading-tight text-secondary md:text-5xl">
-              Aplicativo para Crises de Asma: <span className="text-primary">Rede de Apoio</span>
+              Facilitamos o acesso a <span className="text-primary">bombinha de Asma</span> em casos Emergenciais
             </h1>
             <p className="mb-8 text-lg text-muted">
-              Pessoas com asma ajudando pessoas com asma: encontre a pessoa mais próxima com uma bombinha em emergências.
+              Encontre a pessoa mais próxima com uma 'bombinha' em emergências.
             </p>
             <div className="flex flex-wrap gap-4">
               <a href="https://play.google.com/store/apps/details?id=com.afilaxy.app&hl=pt_BR" target="_blank" rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-pill bg-primary px-6 py-3 font-semibold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-primary-dark">
-                📱 Baixar App
+                📱 Baixar para Android
               </a>
-              <Link to="/profissionais"
-                className="inline-flex items-center gap-2 rounded-pill border-2 border-primary px-6 py-3 font-semibold text-primary transition hover:bg-primary hover:text-white">
-                🩺 Sou Profissional de Saúde
-              </Link>
+              <button disabled
+                className="inline-flex cursor-not-allowed items-center gap-2 rounded-pill border-2 border-primary/75 px-6 py-3 font-semibold text-primary/75">
+                🍎 Baixar para iOS (em breve disponível)
+              </button>
             </div>
           </div>
           <div>
             <img src="/assets/hero_image.png" alt="Aplicativo Afilaxy" className="w-full rounded-card shadow-xl transition hover:scale-[1.02]" />
-          </div>
-        </div>
-      </section>
-
-      {/* Impacto em números */}
-      <section className="bg-secondary py-16 text-white">
-        <div className="mx-auto max-w-7xl px-5">
-          <h2 className="mb-10 text-center text-3xl font-bold">Impacto em Números</h2>
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {stats.map((s, i) => (
-              <div key={i} className="text-center">
-                <p className="text-4xl font-bold text-primary-light">{s.value}</p>
-                <p className="mt-2 text-white/80">{s.label}</p>
-                {s.source && <p className="mt-1 text-xs text-white/50">{s.source}</p>}
-              </div>
-            ))}
           </div>
         </div>
       </section>
@@ -84,7 +68,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-5">
           <div className="mb-12 text-center">
             <h2 className="text-3xl font-bold text-secondary">Como Funciona</h2>
-            <p className="mt-2 text-muted">Cuidado mútuo</p>
+            <p className="mt-2 text-muted">Comunidade como rede de cuidado</p>
           </div>
           <div className="grid gap-8 md:grid-cols-3">
             {steps.map((s, i) => (
@@ -98,44 +82,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Para Profissionais — teaser */}
-      <section className="bg-gradient-to-br from-gray-50 to-teal-50 py-20">
-        <div className="mx-auto max-w-4xl px-5 text-center">
-          <h2 className="mb-4 text-3xl font-bold text-secondary">Para Profissionais de Saúde</h2>
-          <p className="mb-10 text-lg text-muted">
-            Ganhe visibilidade orgânica, publique conteúdo educativo e apoie uma iniciativa que democratiza o acesso à saúde respiratória no Brasil.
-          </p>
-          <div className="mx-auto grid max-w-3xl gap-6 sm:grid-cols-2">
-            <div className="rounded-card bg-white p-6 shadow-md">
-              <div className="mb-3 text-3xl">🩺</div>
-              <h3 className="text-lg font-bold text-secondary">Médicos (PF)</h3>
-              <p className="mt-1 text-sm text-muted">Plano único — R$ 200/mês</p>
-              <p className="mt-2 text-xs text-muted">Apoio à comunidade, perfil completo, badge CFM, artigos educativos</p>
-            </div>
-            <div className="rounded-card bg-white p-6 shadow-md">
-              <div className="mb-3 text-3xl">🏥</div>
-              <h3 className="text-lg font-bold text-secondary">Clínicas (PJ)</h3>
-              <p className="mt-1 text-sm text-muted">A partir de R$ 639/mês</p>
-              <p className="mt-2 text-xs text-muted">Banner regional, conteúdo patrocinado, analytics</p>
-            </div>
-          </div>
-          <div className="mt-8 flex flex-wrap justify-center gap-4">
-            <Link to="/profissionais" className="inline-flex items-center gap-2 rounded-pill bg-primary px-8 py-3 font-semibold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-primary-dark">
-              Sou Médico →
-            </Link>
-            <Link to="/clinicas" className="inline-flex items-center gap-2 rounded-pill border-2 border-primary px-8 py-3 font-semibold text-primary transition hover:bg-primary hover:text-white">
-              Sou Clínica →
-            </Link>
-          </div>
-        </div>
-      </section>
-
       {/* Valores */}
-      <section id="valores" className="py-20">
+      <section id="valores" className="bg-secondary py-20 text-white">
         <div className="mx-auto max-w-7xl px-5">
           <div className="mb-12 text-center">
-            <h2 className="text-3xl font-bold text-secondary">Nossos Valores</h2>
-            <p className="mt-2 text-muted">O que nos une como comunidade</p>
+            <h2 className="text-3xl font-bold text-white">Nossos Valores</h2>
+            <p className="mt-2 text-white/70">O que nos une como comunidade</p>
           </div>
           <div className="grid gap-8 md:grid-cols-3">
             {values.map((v, i) => (
@@ -154,9 +106,6 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-5">
           <h2 className="mb-10 text-center text-3xl font-bold text-secondary">Nossa Jornada</h2>
           <Carousel images={journeyImages} />
-          <div className="mt-10 flex justify-center">
-            <img src="/assets/photos/InovAtiva.png" alt="InovAtiva Brasil" className="h-48 rounded-card object-contain shadow-md md:h-60" />
-          </div>
         </div>
       </section>
 
@@ -171,6 +120,10 @@ export default function Home() {
               📱 Baixar na Google Play
             </a>
             <p className="mt-4 text-sm text-white/60">Versão Beta — Versão de testes em funcionamento básico.</p>
+
+            <div className="mt-8 flex justify-center">
+              <img src="/assets/photos/InovAtiva.png" alt="InovAtiva Brasil" className="h-64 rounded-card object-contain md:h-80" />
+            </div>
 
             {/* Redes sociais */}
             <div className="mt-10 flex flex-wrap justify-center gap-4">

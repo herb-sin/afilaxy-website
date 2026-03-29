@@ -5,7 +5,6 @@ import './index.css'
 import Layout from './components/Layout'
 import Home from './pages/Home'
 import Profissionais from './pages/Profissionais'
-import Clinicas from './pages/Clinicas'
 import ConsultaCRM from './pages/ConsultaCRM'
 import Success from './pages/Success'
 import Privacidade from './pages/Privacidade'
@@ -20,7 +19,6 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
           <Route path="/profissionais" element={<Profissionais />} />
-          <Route path="/clinicas" element={<Clinicas />} />
           <Route path="/profissionais/crm" element={<ConsultaCRM />} />
           <Route path="/success" element={<Success />} />
           <Route path="/privacidade" element={<Privacidade />} />

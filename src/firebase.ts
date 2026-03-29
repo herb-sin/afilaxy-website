@@ -20,7 +20,7 @@ export async function ensureAuth() {
   if (!auth.currentUser) await signInAnonymously(auth)
 }
 
-export async function saveLead(data: { name: string; email: string; phone?: string; crm?: string; cnpj?: string; plan: string; type: 'medico' | 'clinica' }) {
+export async function saveLead(data: { name: string; email: string; phone?: string; crm?: string; cnpj?: string; plan: string; type: 'medico' | 'clinica'; segment?: string }) {
   await ensureAuth()
   return addDoc(collection(db, 'leads'), {
     ...data,
