@@ -12,7 +12,7 @@ const journeyImages = [
 ]
 
 const steps = [
-  { icon: '👥', title: 'Você tem Asma', desc: 'Compartilhamos a dor; sabemos o que é não ter bombinha em uma crise.' },
+  { icon: '👥', title: 'Você tem Asma', desc: 'Compartilhamos a dor; sabemos o que é ter uma crise sem bombinha' },
   { icon: '🤝', title: 'Você pede ajuda', desc: 'Alguém pode estar por perto e te emprestar a bombinha; é possível usá-la sem encostar na boca!' },
   { icon: '❤️', title: 'Você pode salvar uma vida', desc: 'Empreste sua bombinha a alguém que esteja em uma crise emergencial' },
 ]
