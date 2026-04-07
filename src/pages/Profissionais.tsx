@@ -259,6 +259,11 @@ function PlanForm({ plan }: { plan: typeof plans[0] }) {
 }
 
 export default function Profissionais() {
+  const [expandedPlan, setExpandedPlan] = useState<PlanType | null>(null)
+
+  const toggle = (id: PlanType) =>
+    setExpandedPlan(prev => prev === id ? null : id)
+
   return (
     <div className="pt-24">
 
@@ -307,28 +312,68 @@ export default function Profissionais() {
         </div>
       </section>
 
-      {/* Planos */}
+      {/* Planos — Accordion */}
       <section className="py-20">
-        <div className="mx-auto max-w-7xl px-5">
+        <div className="mx-auto max-w-3xl px-5">
           <h2 className="mb-4 text-center text-3xl font-bold text-secondary">Escolha seu perfil</h2>
-          <p className="mb-12 text-center text-muted">Cancele quando quiser. Sem fidelidade.</p>
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {plans.map((plan) => (
-              <div key={plan.id} className="rounded-card border-2 border-gray-200 bg-white p-8 shadow-md transition hover:-translate-y-1 hover:shadow-xl">
-                <div className="mb-2 text-4xl">{plan.icon}</div>
-                <h3 className="text-2xl font-bold text-secondary">{plan.title}</h3>
-                <p className="mb-1 text-sm text-muted">{plan.subtitle}</p>
-                <p className="mb-4 text-lg font-semibold text-primary">{plan.price}</p>
-                <ul className="mb-2 space-y-2 text-sm text-muted">
-                  {plan.features.map((f, i) => (
-                    <li key={i} className="flex items-start gap-2">
-                      <span className="mt-0.5 text-primary">✓</span>{f}
-                    </li>
-                  ))}
-                </ul>
-                <PlanForm plan={plan} />
-              </div>
-            ))}
+          <p className="mb-10 text-center text-muted">Cancele quando quiser. Sem fidelidade.</p>
+
+          <div className="space-y-3">
+            {plans.map((plan) => {
+              const isOpen = expandedPlan === plan.id
+              return (
+                <div
+                  key={plan.id}
+                  className={`rounded-card border-2 bg-white shadow-sm transition-all duration-200 ${
+                    isOpen ? 'border-primary shadow-md' : 'border-gray-200 hover:border-primary/40'
+                  }`}
+                >
+                  {/* Header — sempre visível */}
+                  <button
+                    onClick={() => toggle(plan.id as PlanType)}
+                    className="flex w-full items-center gap-4 px-6 py-4 text-left"
+                    aria-expanded={isOpen}
+                  >
+                    <span className="text-2xl">{plan.icon}</span>
+                    <div className="flex-1 min-w-0">
+                      <p className="font-bold text-secondary leading-tight">{plan.title}</p>
+                      <p className="text-xs text-muted">{plan.subtitle}</p>
+                    </div>
+                    <span className={`shrink-0 font-semibold text-primary text-sm ${
+                      isOpen ? '' : 'hidden sm:block'
+                    }`}>{plan.price}</span>
+                    <span
+                      className={`ml-2 shrink-0 text-primary transition-transform duration-300 ${
+                        isOpen ? 'rotate-180' : ''
+                      }`}
+                    >
+                      ▾
+                    </span>
+                  </button>
+
+                  {/* Corpo expansível */}
+                  <div
+                    style={{
+                      maxHeight: isOpen ? '700px' : '0',
+                      overflow: 'hidden',
+                      transition: 'max-height 0.35s ease',
+                    }}
+                  >
+                    <div className="border-t border-gray-100 px-6 pb-6 pt-4">
+                      <p className="mb-3 text-base font-semibold text-primary">{plan.price}</p>
+                      <ul className="mb-2 space-y-2 text-sm text-muted">
+                        {plan.features.map((f, i) => (
+                          <li key={i} className="flex items-start gap-2">
+                            <span className="mt-0.5 text-primary">✓</span>{f}
+                          </li>
+                        ))}
+                      </ul>
+                      <PlanForm plan={plan} />
+                    </div>
+                  </div>
+                </div>
+              )
+            })}
           </div>
         </div>
       </section>
