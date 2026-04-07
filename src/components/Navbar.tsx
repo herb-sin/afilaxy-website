@@ -51,7 +51,7 @@ export default function Navbar() {
           <li>
             <Link to="/profissionais"
               className="rounded-pill bg-primary px-5 py-2 text-sm font-semibold text-white shadow-md transition hover:-translate-y-0.5 hover:bg-primary-dark">
-              CRM/CREFITO/CNPJ
+              Profissionais
             </Link>
           </li>
         </ul>
@@ -82,7 +82,7 @@ export default function Navbar() {
             <li className="border-t pt-4">
               <Link to="/profissionais" onClick={() => setOpen(false)}
                 className="inline-block rounded-pill bg-primary px-5 py-2 text-sm font-semibold text-white shadow-md">
-                CRM/CREFITO/CNPJ
+                Profissionais
               </Link>
             </li>
           </ul>

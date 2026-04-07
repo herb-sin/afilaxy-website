@@ -26,7 +26,7 @@ export default function Footer() {
           <h4 className="mb-4 font-semibold text-secondary">Links Rápidos</h4>
           <ul className="space-y-2 text-sm">
             <li><Link to="/" className="text-muted transition hover:text-primary">Início</Link></li>
-            <li><Link to="/profissionais" className="text-muted transition hover:text-primary">CRM/CREFITO/CNPJ</Link></li>
+            <li><Link to="/profissionais" className="text-muted transition hover:text-primary">Profissionais</Link></li>
             <li><Link to="/profissionais/crm" className="text-muted transition hover:text-primary">Consulta CRM</Link></li>
             <li><Link to="/privacidade" className="text-muted transition hover:text-primary">Privacidade</Link></li>
           </ul>
