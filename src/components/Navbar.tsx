@@ -50,6 +50,7 @@ export default function Navbar() {
           {/* Botão direto */}
           <li>
             <Link to="/profissionais"
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
               className="rounded-pill bg-primary px-5 py-2 text-sm font-semibold text-white shadow-md transition hover:-translate-y-0.5 hover:bg-primary-dark">
               Profissionais
             </Link>
@@ -80,7 +81,7 @@ export default function Navbar() {
               </li>
             ))}
             <li className="border-t pt-4">
-              <Link to="/profissionais" onClick={() => setOpen(false)}
+              <Link to="/profissionais" onClick={() => { setOpen(false); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
                 className="inline-block rounded-pill bg-primary px-5 py-2 text-sm font-semibold text-white shadow-md">
                 Profissionais
               </Link>
