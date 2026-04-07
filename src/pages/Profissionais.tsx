@@ -16,7 +16,7 @@ const values = [
   { icon: '❤️', title: 'Impacto social', desc: 'Se associe a uma iniciativa que evangeliza o acesso à saúde respiratória no SUS.' },
 ]
 
-type PlanType = 'pneumologista' | 'alergologista' | 'fisioterapeuta' | 'clinica'
+type PlanType = 'pneumologia' | 'alergologia' | 'fisioterapia' | 'psicologia' | 'psiquiatria' | 'otorrino' | 'endocrinologia' | 'gastro' | 'cardiologia' | 'clinica'
 
 interface FormState {
   name: string
@@ -33,9 +33,9 @@ const initialForm: FormState = { name: '', email: '', phone: '', crm: '', cnpj: 
 
 const plans = [
   {
-    id: 'pneumologista' as PlanType,
+    id: 'pneumologia' as PlanType,
     icon: '🫁',
-    title: 'Pneumologista',
+    title: 'Pneumologia',
     subtitle: 'Pessoa Física',
     price: 'R$ 200/mês',
     features: [
@@ -48,9 +48,9 @@ const plans = [
     crmLabel: 'CRM',
   },
   {
-    id: 'alergologista' as PlanType,
+    id: 'alergologia' as PlanType,
     icon: '🌸',
-    title: 'Alergologista',
+    title: 'Alergologia',
     subtitle: 'Pessoa Física',
     price: 'R$ 200/mês',
     features: [
@@ -63,9 +63,9 @@ const plans = [
     crmLabel: 'CRM',
   },
   {
-    id: 'fisioterapeuta' as PlanType,
+    id: 'fisioterapia' as PlanType,
     icon: '🤲',
-    title: 'Fisioterapeuta',
+    title: 'Fisioterapia Respiratória',
     subtitle: 'Pessoa Física',
     price: 'R$ 200/mês',
     features: [
@@ -78,9 +78,99 @@ const plans = [
     crmLabel: 'CREFITO',
   },
   {
+    id: 'psicologia' as PlanType,
+    icon: '🧠',
+    title: 'Psicologia',
+    subtitle: 'Pessoa Física',
+    price: 'R$ 200/mês',
+    features: [
+      'Perfil completo no app (foto, bio, link de agendamento)',
+      'Badge "Verificado pelo CRP"',
+      '2 artigos educativos/mês',
+      'Analytics de visualizações do perfil',
+      'Contato direto via WhatsApp',
+    ],
+    crmLabel: 'CRP',
+  },
+  {
+    id: 'psiquiatria' as PlanType,
+    icon: '💆',
+    title: 'Psiquiatria',
+    subtitle: 'Pessoa Física',
+    price: 'R$ 200/mês',
+    features: [
+      'Perfil completo no app (foto, bio, link de agendamento)',
+      'Badge "Verificado pelo CFM"',
+      '2 artigos educativos/mês',
+      'Analytics de visualizações do perfil',
+      'Contato direto via WhatsApp',
+    ],
+    crmLabel: 'CRM',
+  },
+  {
+    id: 'otorrino' as PlanType,
+    icon: '👂',
+    title: 'Otorrinolaringologia',
+    subtitle: 'Pessoa Física',
+    price: 'R$ 200/mês',
+    features: [
+      'Perfil completo no app (foto, bio, link de agendamento)',
+      'Badge "Verificado pelo CFM"',
+      '2 artigos educativos/mês',
+      'Analytics de visualizações do perfil',
+      'Contato direto via WhatsApp',
+    ],
+    crmLabel: 'CRM',
+  },
+  {
+    id: 'endocrinologia' as PlanType,
+    icon: '🔬',
+    title: 'Endocrinologia',
+    subtitle: 'Pessoa Física',
+    price: 'R$ 200/mês',
+    features: [
+      'Perfil completo no app (foto, bio, link de agendamento)',
+      'Badge "Verificado pelo CFM"',
+      '2 artigos educativos/mês',
+      'Analytics de visualizações do perfil',
+      'Contato direto via WhatsApp',
+    ],
+    crmLabel: 'CRM',
+  },
+  {
+    id: 'gastro' as PlanType,
+    icon: '🩺',
+    title: 'Gastroenterologia',
+    subtitle: 'Pessoa Física',
+    price: 'R$ 200/mês',
+    features: [
+      'Perfil completo no app (foto, bio, link de agendamento)',
+      'Badge "Verificado pelo CFM"',
+      '2 artigos educativos/mês',
+      'Analytics de visualizações do perfil',
+      'Contato direto via WhatsApp',
+    ],
+    crmLabel: 'CRM',
+  },
+  {
+    id: 'cardiologia' as PlanType,
+    icon: '❤️',
+    title: 'Cardiologia',
+    subtitle: 'Pessoa Física',
+    price: 'R$ 200/mês',
+    features: [
+      'Perfil completo no app (foto, bio, link de agendamento)',
+      'Badge "Verificado pelo CFM"',
+      '2 artigos educativos/mês',
+      'Analytics de visualizações do perfil',
+      'Contato direto via WhatsApp',
+    ],
+    crmLabel: 'CRM',
+  },
+  {
     id: 'clinica' as PlanType,
     icon: '🏥',
-    title: 'Clínica',
+    title: 'Clínicas',
     subtitle: 'Pessoa Jurídica',
     price: 'A partir de R$ 639/mês',
     features: [
@@ -146,7 +236,7 @@ function PlanForm({ plan }: { plan: typeof plans[0] }) {
         <>
           <input type="text" placeholder={plan.crmLabel} value={form.crm} onChange={set('crm')}
             className="w-full rounded-xl border-2 border-gray-200 px-4 py-3 text-sm transition focus:border-primary focus:outline-none" />
-          {(plan.id === 'pneumologista' || plan.id === 'alergologista') && (
+          {plan.crmLabel === 'CRM' && (
             <Link to="/profissionais/crm" className="block text-xs text-primary hover:underline">
               Verificar CRM no CFM →
             </Link>
@@ -222,7 +312,7 @@ export default function Profissionais() {
         <div className="mx-auto max-w-7xl px-5">
           <h2 className="mb-4 text-center text-3xl font-bold text-secondary">Escolha seu perfil</h2>
           <p className="mb-12 text-center text-muted">Cancele quando quiser. Sem fidelidade.</p>
-          <div className="grid gap-8 sm:grid-cols-2 xl:grid-cols-4">
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {plans.map((plan) => (
               <div key={plan.id} className="rounded-card border-2 border-gray-200 bg-white p-8 shadow-md transition hover:-translate-y-1 hover:shadow-xl">
                 <div className="mb-2 text-4xl">{plan.icon}</div>
