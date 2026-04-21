@@ -68,10 +68,10 @@ export default function Home() {
                 className="inline-flex items-center gap-2 rounded-pill bg-primary px-6 py-3 font-semibold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-primary-dark">
                 📱 Baixar para Android
               </a>
-              <button disabled
-                className="inline-flex cursor-not-allowed items-center gap-2 rounded-pill border-2 border-primary/75 px-6 py-3 font-semibold text-primary/75">
-                🍎 Baixar para iOS (em breve disponível)
-              </button>
+              <a href="https://testflight.apple.com/join/WHuhbecE" target="_blank" rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-pill border-2 border-primary px-6 py-3 font-semibold text-primary shadow-sm transition hover:-translate-y-0.5 hover:bg-primary hover:text-white">
+                🍎 Testar no iOS (TestFlight)
+              </a>
             </div>
           </div>
           <div>
@@ -204,11 +204,17 @@ export default function Home() {
           <div className="rounded-[2rem] bg-secondary bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjIiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3N2Zz4=')] p-12 text-center text-white">
             <h2 className="mb-4 text-3xl font-bold text-white">Baixe o App e Faça Parte</h2>
             <p className="mb-8 text-white/80">Baixe o Afilaxy e faça parte da rede onde pessoas com asma cuidam umas das outras.</p>
-            <a href="https://play.google.com/store/apps/details?id=com.afilaxy.app&hl=pt_BR" target="_blank" rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-pill bg-primary px-8 py-3 font-semibold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-primary-dark">
-              📱 Baixar na Google Play
-            </a>
-            <p className="mt-4 text-sm text-white/60">Versão Beta — Versão de testes em funcionamento básico.</p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <a href="https://play.google.com/store/apps/details?id=com.afilaxy.app&hl=pt_BR" target="_blank" rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-pill bg-primary px-8 py-3 font-semibold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-primary-dark">
+                📱 Baixar na Google Play
+              </a>
+              <a href="https://testflight.apple.com/join/WHuhbecE" target="_blank" rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-pill border-2 border-white/80 px-8 py-3 font-semibold text-white transition hover:-translate-y-0.5 hover:border-white hover:bg-white/10">
+                🍎 Testar no iOS (TestFlight)
+              </a>
+            </div>
+            <p className="mt-4 text-sm text-white/60">Versão Beta — disponível para Android e iOS (TestFlight).</p>
 
             <div className="mt-8 flex justify-center">
               <img src="/assets/photos/InovAtiva.png" alt="InovAtiva Brasil" className="h-64 rounded-card object-contain md:h-80" />
