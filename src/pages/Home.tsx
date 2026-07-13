@@ -12,33 +12,38 @@ const journeyImages = [
 ]
 
 const emergencySteps = [
-  { icon: '👥', title: 'Você tem Asma', desc: 'Compartilhamos a dor; sabemos o que é ter uma crise sem bombinha' },
-  { icon: '🤝', title: 'Você pede ajuda', desc: 'Alguém pode estar por perto e te emprestar a bombinha; é possível usá-la sem encostar na boca!' },
-  { icon: '❤️', title: 'Você pode salvar uma vida', desc: 'Empreste sua bombinha a alguém que esteja em uma crise emergencial' },
+  { icon: '👥', title: 'Você tem Asma', desc: 'Compartilhamos a experiência. Sabemos o que é não ter apoio em um momento difícil.' },
+  { icon: '🤝', title: 'Você pede ajuda', desc: 'Ative a rede de apoio e conecte-se a alguém próximo que possa ajudar a localizar um inalador.' },
+  { icon: '❤️', title: 'Você pode ajudar', desc: 'Esteja disponível para apoiar alguém da comunidade em um momento de necessidade.' },
 ]
 
 const riskSteps = [
-  { icon: '🌡️', title: 'Cruzamento de Dados', desc: 'O app cruza dados do clima local, qualidade do ar (AQI/PM2.5), umidade e sazonalidade com o seu histórico de crises.' },
-  { icon: '📊', title: 'Previsão Personalizada', desc: 'Você recebe um alerta diário com o risco de crise: Baixa · Moderada · Alta · Muito Alta.' },
-  { icon: '💡', title: 'Recomendações Práticas', desc: '"Evite atividades ao ar livre hoje" ou "Qualidade do ar ruim — mantenha seu broncodilatador de resgate próximo."' },
+  { icon: '🌡️', title: 'Check-in de Bem-Estar', desc: 'Seus check-ins diários de bem-estar são combinados com dados de clima local, qualidade do ar (AQI), umidade e sazonalidade da sua região.' },
+  { icon: '📊', title: 'Índice de Bem-Estar e Risco', desc: 'Você recebe uma pontuação de 0 a 100 em quatro níveis — de Baixo a Muito Alto — calculada a partir dos seus check-ins e do contexto ambiental.' },
+  { icon: '💡', title: 'Orientações para o Dia a Dia', desc: '"Evite atividades ao ar livre hoje" ou "Qualidade do ar ruim — mantenha seu inalador por perto."' },
 ]
 
 const techSources = [
   { icon: '🌤️', title: 'Dados Ambientais', desc: 'Temperatura, umidade, índice UV e vento via OpenMeteo.' },
   { icon: '💨', title: 'Qualidade do Ar', desc: 'AQI e PM2.5 por geolocalização via WAQI.' },
-  { icon: '📋', title: 'Histórico Clínico', desc: 'Frequência e gravidade de crises registradas pelo próprio paciente.' },
+  { icon: '📋', title: 'Check-ins de Bem-Estar', desc: 'Respostas diárias a três perguntas objetivas sobre como você está se sentindo, nos períodos matinal e noturno.' },
   { icon: '🌿', title: 'Sazonalidade Brasileira', desc: 'Temporadas de pólen e períodos de clima seco típicos do Brasil.' },
 ]
 
 const faqs = [
   {
     q: 'O Afilaxy faz diagnóstico médico?',
-    a: 'Não. O Afilaxy é um sistema de suporte à decisão baseado em evidências epidemiológicas e ambientais. Não realiza diagnósticos, não prescreve medicamentos e não substitui a consulta com um profissional de saúde habilitado. Os alertas de risco são orientações preventivas para auxiliar pacientes a tomar decisões informadas sobre seu dia a dia.',
+    a: 'Não. O Afilaxy é uma ferramenta de apoio comunitário e monitoramento de bem-estar. O Índice de Bem-Estar e Risco é calculado por um algoritmo heurístico — não realiza diagnósticos, não prescreve medicamentos e não substitui a consulta com um profissional de saúde habilitado. Em situações de risco à vida, acione imediatamente o SAMU (192) ou o Corpo de Bombeiros (193).',
   },
   {
     q: 'Meus dados de saúde são protegidos?',
     a: 'Sim. Todos os dados pessoais e de saúde são tratados com rigor, em conformidade com a Lei Geral de Proteção de Dados (LGPD). Consulte nossa Política de Privacidade para mais detalhes.',
     link: { href: '/privacidade', label: 'Ver Política de Privacidade' },
+  },
+  {
+    q: 'Quais são os Termos de Uso da plataforma?',
+    a: 'Os Termos Gerais e Condições de Uso regulam o relacionamento entre a AFILAXY e os Usuários, cobrindo cadastro, Perfil Médico, Índice de Bem-Estar, emergência P2P, direitos do titular (LGPD) e limitações de responsabilidade.',
+    link: { href: '/termos', label: 'Ler Termos de Uso' },
   },
 ]
 
@@ -61,7 +66,7 @@ export default function Home() {
               Rede de apoio e <span className="text-primary">precisão de dados</span> contra a Asma
             </h1>
             <p className="mb-8 text-lg text-muted">
-              Busque ajuda e conte com modelos de dados que preveem riscos antes dos sintomas.
+              Busque ajuda em emergências e acompanhe seu bem-estar diário com base em dados ambientais e check-ins personalizados.
             </p>
             <div className="flex flex-wrap gap-4">
               <a href="https://play.google.com/store/apps/details?id=com.afilaxy.app&hl=pt_BR" target="_blank" rel="noopener noreferrer"
@@ -101,7 +106,7 @@ export default function Home() {
           </div>
 
           {/* Bloco: Previsão de Risco */}
-          <h3 className="mb-8 text-center text-xl font-bold text-secondary">Previsão de Risco</h3>
+          <h3 className="mb-8 text-center text-xl font-bold text-secondary">Índice de Bem-Estar e Risco</h3>
           <div className="grid gap-8 md:grid-cols-3">
             {riskSteps.map((s, i) => (
               <div key={i} className="rounded-card bg-white p-8 text-center shadow-md transition hover:-translate-y-2 hover:shadow-xl">
@@ -125,8 +130,8 @@ export default function Home() {
       <section id="tecnologia" className="bg-secondary py-20 text-white">
         <div className="mx-auto max-w-7xl px-5">
           <div className="mb-12 text-center">
-            <h2 className="text-3xl font-bold text-white">Análise Preditiva Baseada em Evidências</h2>
-            <p className="mt-2 text-white/70">Múltiplas fontes de dados integradas em tempo real</p>
+            <h2 className="text-3xl font-bold text-white">Análise Contextual em Tempo Real</h2>
+            <p className="mt-2 text-white/70">Múltiplas fontes de dados integradas para o seu contexto</p>
           </div>
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
             {techSources.map((t, i) => (
@@ -139,7 +144,7 @@ export default function Home() {
           </div>
           <div className="mt-12 rounded-card bg-white/10 p-8 text-center backdrop-blur-sm">
             <p className="text-white/90 leading-relaxed max-w-3xl mx-auto">
-              Esses dados alimentam nosso <strong className="text-white">motor de regras clínicas baseado em evidências epidemiológicas</strong>, que calcula o score de risco de exacerbação asmática em tempo real.
+              Esses dados alimentam nosso <strong className="text-white">algoritmo heurístico</strong>, que calcula o Índice de Bem-Estar e Risco em tempo real — uma pontuação informativa para orientar o seu dia a dia.
             </p>
             <p className="mt-4 text-sm text-white/60">
               Estamos em fase de coleta de dados rotulados para treinar nosso futuro modelo de Machine Learning supervisionado.

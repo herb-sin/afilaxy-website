@@ -11,8 +11,7 @@ const stats = [
 
 const values = [
   { icon: '📍', title: 'Alcance fora do consultório', desc: 'Apareça para pacientes fora do ambiente clínico.' },
-  { icon: '📝', title: 'Autoridade de conteúdo', desc: 'Publique artigos educativos dentro do app e posicione-se como referência em saúde respiratória.' },
-  { icon: '✅', title: 'Credibilidade verificada', desc: 'Badge de verificação via CRM/CFM — diferencia você de informações não confiáveis.' },
+{ icon: '✅', title: 'Credibilidade verificada', desc: 'Badge de verificação via CRM/CFM — diferencia você de informações não confiáveis.' },
   { icon: '❤️', title: 'Impacto social', desc: 'Se associe a uma iniciativa que evangeliza o acesso à saúde respiratória no SUS.' },
 ]
 
@@ -41,7 +40,6 @@ const plans = [
     features: [
       'Perfil completo no app (foto, bio, link de agendamento)',
       'Badge "Verificado pelo CFM"',
-      '2 artigos educativos/mês',
       'Analytics de visualizações do perfil',
       'Contato direto via WhatsApp',
     ],
@@ -56,7 +54,6 @@ const plans = [
     features: [
       'Perfil completo no app (foto, bio, link de agendamento)',
       'Badge "Verificado pelo CFM"',
-      '2 artigos educativos/mês',
       'Analytics de visualizações do perfil',
       'Contato direto via WhatsApp',
     ],
@@ -71,7 +68,6 @@ const plans = [
     features: [
       'Perfil completo no app (foto, bio, link de agendamento)',
       'Badge "Verificado pelo CREFITO"',
-      '2 artigos educativos/mês',
       'Analytics de visualizações do perfil',
       'Contato direto via WhatsApp',
     ],
@@ -86,7 +82,6 @@ const plans = [
     features: [
       'Perfil completo no app (foto, bio, link de agendamento)',
       'Badge "Verificado pelo CRP"',
-      '2 artigos educativos/mês',
       'Analytics de visualizações do perfil',
       'Contato direto via WhatsApp',
     ],
@@ -101,7 +96,6 @@ const plans = [
     features: [
       'Perfil completo no app (foto, bio, link de agendamento)',
       'Badge "Verificado pelo CFM"',
-      '2 artigos educativos/mês',
       'Analytics de visualizações do perfil',
       'Contato direto via WhatsApp',
     ],
@@ -116,7 +110,6 @@ const plans = [
     features: [
       'Perfil completo no app (foto, bio, link de agendamento)',
       'Badge "Verificado pelo CFM"',
-      '2 artigos educativos/mês',
       'Analytics de visualizações do perfil',
       'Contato direto via WhatsApp',
     ],
@@ -131,7 +124,6 @@ const plans = [
     features: [
       'Perfil completo no app (foto, bio, link de agendamento)',
       'Badge "Verificado pelo CFM"',
-      '2 artigos educativos/mês',
       'Analytics de visualizações do perfil',
       'Contato direto via WhatsApp',
     ],
@@ -146,7 +138,6 @@ const plans = [
     features: [
       'Perfil completo no app (foto, bio, link de agendamento)',
       'Badge "Verificado pelo CFM"',
-      '2 artigos educativos/mês',
       'Analytics de visualizações do perfil',
       'Contato direto via WhatsApp',
     ],
@@ -161,7 +152,6 @@ const plans = [
     features: [
       'Perfil completo no app (foto, bio, link de agendamento)',
       'Badge "Verificado pelo CFM"',
-      '2 artigos educativos/mês',
       'Analytics de visualizações do perfil',
       'Contato direto via WhatsApp',
     ],
