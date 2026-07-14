@@ -10,7 +10,7 @@ const stats = [
 ]
 
 const values = [
-  { icon: '📍', title: 'Alcance fora do consultório', desc: 'Apareça para pacientes fora do ambiente clínico.' },
+  { icon: '📍', title: 'Alcance fora do consultório', desc: 'Apareça para pessoas com asma fora do consultório.' },
 { icon: '✅', title: 'Credibilidade verificada', desc: 'Badge de verificação via CRM/CFM — diferencia você de informações não confiáveis.' },
   { icon: '❤️', title: 'Impacto social', desc: 'Se associe a uma iniciativa que evangeliza o acesso à saúde respiratória no SUS.' },
 ]
@@ -274,7 +274,7 @@ export default function Profissionais() {
       <section className="py-20">
         <div className="mx-auto max-w-7xl px-5">
           <h2 className="mb-12 text-center text-3xl font-bold text-secondary">O que o Afilaxy entrega para você</h2>
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {values.map((v, i) => (
               <div key={i} className="rounded-card bg-white p-8 text-center shadow-md transition hover:-translate-y-2 hover:shadow-xl">
                 <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-3xl">{v.icon}</div>
