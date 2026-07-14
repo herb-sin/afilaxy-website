@@ -4,7 +4,7 @@ import { saveLead } from '../firebase'
 
 const stats = [
   { value: '20M', label: 'brasileiros com asma', source: 'GINA 2023' },
-  { value: '80%', label: 'não seguem tratamento preventivo', source: '' },
+  { value: '80%', label: 'não têm acompanhamento preventivo regular', source: '' },
   { value: '2ª', label: 'doença respiratória crônica mais comum no mundo', source: '' },
   { value: 'SUS', label: 'medicação gratuita disponível — falta adesão', source: '' },
 ]
@@ -262,7 +262,7 @@ export default function Profissionais() {
         <div className="mx-auto max-w-3xl px-5">
           <span className="mb-4 inline-block rounded-pill bg-primary/10 px-4 py-1 text-sm font-semibold text-primary">Para Profissionais de Saúde</span>
           <h1 className="mb-4 text-4xl font-bold text-secondary md:text-5xl">
-            Alcance pacientes com Asma <span className="text-primary">fora do ambiente clínico</span>
+            Alcance pessoas com asma <span className="text-primary">fora do consultório</span>
           </h1>
           <p className="text-lg text-muted">
             Apóie a ajuda entre pacientes em momentos críticos. Se faça presente com orientação e seja visível para a comunidade

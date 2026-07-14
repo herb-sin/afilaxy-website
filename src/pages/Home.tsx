@@ -48,7 +48,7 @@ const faqs = [
 ]
 
 const values = [
-  { icon: '🤝', title: 'Empatia', desc: 'Entendemos o que é uma crise de asma. Por isso, nos ajudamos.' },
+  { icon: '🤝', title: 'Empatia', desc: 'Entendemos o que é passar por um momento difícil com asma. Por isso, nos ajudamos.' },
   { icon: '🔄', title: 'Reciprocidade', desc: 'Somos uma comunidade de apoio mútuo e cuidado compartilhado.' },
   { icon: '💛', title: 'Solidariedade', desc: 'O cuidado é o pilar da civilidade.' },
 ]
@@ -66,7 +66,7 @@ export default function Home() {
               Rede de apoio e <span className="text-primary">bem-estar</span> para pessoas com asma
             </h1>
             <p className="mb-8 text-lg text-muted">
-              Busque ajuda em emergências e acompanhe seu bem-estar diário com base em dados ambientais e check-ins personalizados.
+              Busque apoio quando precisar e acompanhe seu bem-estar diário com base em dados ambientais e check-ins personalizados.
             </p>
             <div className="flex flex-wrap gap-4">
               <a href="https://play.google.com/store/apps/details?id=com.afilaxy.app&hl=pt_BR" target="_blank" rel="noopener noreferrer"
@@ -120,7 +120,7 @@ export default function Home() {
           {/* Aviso regulatório inline */}
           <div className="mt-10 rounded-card border border-yellow-200 bg-yellow-50 p-5 text-center text-sm text-yellow-800">
             <p>
-              ⚠️ <strong>Aviso importante:</strong> o Afilaxy é um sistema de apoio à decisão e não substitui a orientação médica. Os alertas de risco são orientações preventivas para auxiliar pacientes a tomar decisões informadas sobre seu dia a dia.
+              ⚠️ <strong>Aviso importante:</strong> o Afilaxy é uma ferramenta de apoio comunitário e não substitui a orientação médica. O Índice de Bem-Estar e Risco é uma pontuação informativa para orientar o dia a dia — não um diagnóstico.
             </p>
           </div>
         </div>
