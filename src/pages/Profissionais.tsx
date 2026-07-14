@@ -226,11 +226,6 @@ function PlanForm({ plan }: { plan: typeof plans[0] }) {
         <>
           <input type="text" placeholder={plan.crmLabel} value={form.crm} onChange={set('crm')}
             className="w-full rounded-xl border-2 border-gray-200 px-4 py-3 text-sm transition focus:border-primary focus:outline-none" />
-          {plan.crmLabel === 'CRM' && (
-            <Link to="/profissionais/crm" className="block text-xs text-primary hover:underline">
-              Verificar CRM no CFM →
-            </Link>
-          )}
         </>
       )}
       {plan.id === 'clinica' && (

@@ -27,8 +27,7 @@ export default function Footer() {
           <ul className="space-y-2 text-sm">
             <li><Link to="/" className="text-muted transition hover:text-primary">Início</Link></li>
             <li><Link to="/profissionais" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-muted transition hover:text-primary">Profissionais</Link></li>
-            <li><Link to="/profissionais/crm" className="text-muted transition hover:text-primary">Consulta CRM</Link></li>
-            <li><Link to="/privacidade" className="text-muted transition hover:text-primary">Privacidade</Link></li>
+<li><Link to="/privacidade" className="text-muted transition hover:text-primary">Privacidade</Link></li>
             <li><Link to="/termos" className="text-muted transition hover:text-primary">Termos de Uso</Link></li>
           </ul>
         </div>
