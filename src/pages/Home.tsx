@@ -36,8 +36,8 @@ const faqs = [
     a: 'Não. O Afilaxy é uma ferramenta de apoio comunitário e monitoramento de bem-estar. O Índice de Bem-Estar e Risco é calculado por um algoritmo heurístico — não realiza diagnósticos, não prescreve medicamentos e não substitui a consulta com um profissional de saúde habilitado. Em situações de risco à vida, acione imediatamente o SAMU (192) ou o Corpo de Bombeiros (193).',
   },
   {
-    q: 'Meus dados de saúde são protegidos?',
-    a: 'Sim. Todos os dados pessoais e de saúde são tratados com rigor, em conformidade com a Lei Geral de Proteção de Dados (LGPD). Consulte nossa Política de Privacidade para mais detalhes.',
+    q: 'Como o Afilaxy protege meus dados pessoais?',
+    a: 'Todos os dados pessoais são tratados com rigor, em conformidade com a Lei Geral de Proteção de Dados (LGPD). Consulte nossa Política de Privacidade para mais detalhes.',
     link: { href: '/privacidade', label: 'Ver Política de Privacidade' },
   },
   {
