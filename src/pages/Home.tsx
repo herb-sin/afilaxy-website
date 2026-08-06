@@ -233,6 +233,7 @@ export default function Home() {
                 { href: 'https://www.linkedin.com/company/afilaxy/', icon: 'fab fa-linkedin' },
                 { href: 'https://www.facebook.com/Afilaxy', icon: 'fab fa-facebook' },
                 { href: 'https://wa.me/5511970657225', icon: 'fab fa-whatsapp' },
+                { href: 'https://www.youtube.com/@afilaxy', icon: 'fab fa-youtube' },
                 { href: 'https://github.com/herb-sin/afilaxy', icon: 'fab fa-github' },
               ].map((s) => (
                 <a key={s.icon} href={s.href} target="_blank" rel="noopener noreferrer"
