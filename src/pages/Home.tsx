@@ -57,7 +57,7 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="relative overflow-hidden bg-secondary pb-20 pt-32 md:pt-40">
+      <section className="relative overflow-hidden bg-secondary pb-16 pt-20 md:pb-20 md:pt-40">
 
         {/* Painel branco com curva — apenas desktop */}
         <div className="pointer-events-none absolute inset-0 hidden md:block">
@@ -72,37 +72,41 @@ export default function Home() {
           </svg>
         </div>
 
-        {/* Fundo claro para mobile (coluna única) */}
-        <div className="absolute inset-x-0 top-0 h-3/5 bg-gradient-to-br from-gray-50 to-teal-50 md:hidden" />
+        {/* Fundo claro para mobile — cobre a área do texto (parte inferior) */}
+        <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-gray-50 to-teal-50/60 md:hidden" />
 
-        <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-5 md:grid-cols-2">
-          <div className="relative z-10">
-            <img src="/assets/afilaxy_master_2025logo.svg" alt="Afilaxy" className="mb-4 h-28" />
-            <span className="mb-3 inline-block rounded-pill bg-primary/10 px-4 py-1 text-sm font-semibold text-primary">Versão Beta</span>
-            <h1 className="mb-4 text-4xl font-bold leading-tight text-secondary md:text-5xl">
-              Rede social de <span className="text-primary">quem tem Asma</span>
-            </h1>
-            <p className="mb-8 text-lg text-muted">
-              Busque apoio quando precisar e acompanhe seu bem-estar diário com base em dados ambientais e check-ins personalizados.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <a href="https://play.google.com/store/apps/details?id=com.afilaxy.app&hl=pt_BR" target="_blank" rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-pill bg-primary px-6 py-3 font-semibold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-primary-dark">
-                📱 Baixar para Android
-              </a>
-              <a href="https://testflight.apple.com/join/WHuhbecE" target="_blank" rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-pill border-2 border-primary px-6 py-3 font-semibold text-primary shadow-sm transition hover:-translate-y-0.5 hover:bg-primary hover:text-white">
-                🍎 Testar no iOS (TestFlight)
-              </a>
-            </div>
-          </div>
-          <div className="relative z-10">
-            {/* Brilho âmbar atrás da imagem */}
+        <div className="relative mx-auto grid max-w-7xl items-center gap-8 px-5 md:grid-cols-2 md:gap-10">
+
+          {/* Imagem — primeiro no mobile, segundo no desktop */}
+          <div className="relative z-10 order-first md:order-last">
             <div className="absolute -inset-6 rounded-3xl bg-amber-400/20 blur-3xl" />
             <a href="https://www.youtube.com/watch?v=dzgaivAfjXY" target="_blank" rel="noopener noreferrer" aria-label="Assistir entrevista no YouTube" className="relative block">
               <img src="/assets/entrevista.jpeg" alt="Entrevista Herbert Jung Sin — Papeando com Carlão" className="relative w-full rounded-card shadow-xl transition hover:scale-[1.02] cursor-pointer" />
             </a>
           </div>
+
+          {/* Texto — segundo no mobile, primeiro no desktop */}
+          <div className="relative z-10 order-last md:order-first">
+            <img src="/assets/afilaxy_master_2025logo.svg" alt="Afilaxy" className="mb-4 h-20 md:h-28" />
+            <span className="mb-3 inline-block rounded-pill bg-primary/10 px-4 py-1 text-sm font-semibold text-primary">Versão Beta</span>
+            <h1 className="mb-4 text-3xl font-bold leading-tight text-secondary md:text-5xl">
+              Rede social de <span className="text-primary">quem tem Asma</span>
+            </h1>
+            <p className="mb-8 text-base text-muted md:text-lg">
+              Busque apoio quando precisar e acompanhe seu bem-estar diário com base em dados ambientais e check-ins personalizados.
+            </p>
+            <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
+              <a href="https://play.google.com/store/apps/details?id=com.afilaxy.app&hl=pt_BR" target="_blank" rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-pill bg-primary px-6 py-3 font-semibold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-primary-dark">
+                📱 Baixar para Android
+              </a>
+              <a href="https://testflight.apple.com/join/WHuhbecE" target="_blank" rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-pill border-2 border-primary px-6 py-3 font-semibold text-primary shadow-sm transition hover:-translate-y-0.5 hover:bg-primary hover:text-white">
+                🍎 Testar no iOS (TestFlight)
+              </a>
+            </div>
+          </div>
+
         </div>
       </section>
 
