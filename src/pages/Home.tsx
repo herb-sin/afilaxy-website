@@ -63,7 +63,7 @@ export default function Home() {
             <img src="/assets/afilaxy_master_2025logo.svg" alt="Afilaxy" className="mb-4 h-28" />
             <span className="mb-3 inline-block rounded-pill bg-primary/10 px-4 py-1 text-sm font-semibold text-primary">Versão Beta</span>
             <h1 className="mb-4 text-4xl font-bold leading-tight text-secondary md:text-5xl">
-              Rede de apoio e <span className="text-primary">bem-estar</span> para pessoas com asma
+              Rede social de <span className="text-primary">quem tem Asma</span>
             </h1>
             <p className="mb-8 text-lg text-muted">
               Busque apoio quando precisar e acompanhe seu bem-estar diário com base em dados ambientais e check-ins personalizados.

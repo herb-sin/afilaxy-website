@@ -180,7 +180,8 @@ function PlanForm({ plan }: { plan: typeof plans[0] }) {
     setForm(f => ({ ...f, [field]: e.target.value }))
 
   const handleSubmit = async () => {
-    if (!form.name || !form.email) { alert('Preencha nome e email.'); return }
+    const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)
+    if (!form.name || !form.email || !emailValid) { alert('Preencha nome e e-mail válido.'); return }
     setForm(f => ({ ...f, loading: true, error: '' }))
     try {
       await saveLead({
