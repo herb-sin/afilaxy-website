@@ -57,15 +57,15 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-gray-50 to-teal-50 pb-20 pt-32 md:pt-40">
+      <section className="bg-secondary pb-20 pt-32 md:pt-40">
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 md:grid-cols-2">
           <div>
             <img src="/assets/afilaxy_master_2025logo.svg" alt="Afilaxy" className="mb-4 h-28" />
-            <span className="mb-3 inline-block rounded-pill bg-primary/10 px-4 py-1 text-sm font-semibold text-primary">Versão Beta</span>
-            <h1 className="mb-4 text-4xl font-bold leading-tight text-secondary md:text-5xl">
-              Rede social de <span className="text-primary">quem tem Asma</span>
+            <span className="mb-3 inline-block rounded-pill bg-white/10 px-4 py-1 text-sm font-semibold text-white">Versão Beta</span>
+            <h1 className="mb-4 text-4xl font-bold leading-tight text-white md:text-5xl">
+              Rede social de <span className="text-primary-light">quem tem Asma</span>
             </h1>
-            <p className="mb-8 text-lg text-muted">
+            <p className="mb-8 text-lg text-white/70">
               Busque apoio quando precisar e acompanhe seu bem-estar diário com base em dados ambientais e check-ins personalizados.
             </p>
             <div className="flex flex-wrap gap-4">
@@ -74,13 +74,15 @@ export default function Home() {
                 📱 Baixar para Android
               </a>
               <a href="https://testflight.apple.com/join/WHuhbecE" target="_blank" rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-pill border-2 border-primary px-6 py-3 font-semibold text-primary shadow-sm transition hover:-translate-y-0.5 hover:bg-primary hover:text-white">
+                className="inline-flex items-center gap-2 rounded-pill border-2 border-white/50 px-6 py-3 font-semibold text-white shadow-sm transition hover:-translate-y-0.5 hover:border-white hover:bg-white/10">
                 🍎 Testar no iOS (TestFlight)
               </a>
             </div>
           </div>
           <div>
-            <img src="/assets/hero_image.png" alt="Aplicativo Afilaxy" className="w-full rounded-card shadow-xl transition hover:scale-[1.02]" />
+            <a href="https://www.youtube.com/watch?v=dzgaivAfjXY" target="_blank" rel="noopener noreferrer" aria-label="Assistir entrevista no YouTube">
+              <img src="/assets/entrevista.jpeg" alt="Entrevista Herbert Jung Sin — Papeando com Carlão" className="w-full rounded-card shadow-2xl transition hover:scale-[1.02] cursor-pointer" />
+            </a>
           </div>
         </div>
       </section>
