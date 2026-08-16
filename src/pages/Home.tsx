@@ -57,9 +57,26 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-gray-50 to-teal-50 pb-20 pt-32 md:pt-40">
-        <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 md:grid-cols-2">
-          <div>
+      <section className="relative overflow-hidden bg-secondary pb-20 pt-32 md:pt-40">
+
+        {/* Painel branco com curva — apenas desktop */}
+        <div className="pointer-events-none absolute inset-0 hidden md:block">
+          <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="h-full w-full">
+            <defs>
+              <linearGradient id="hero-panel" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stopColor="#f9fafb" />
+                <stop offset="100%" stopColor="#f0fdfa" />
+              </linearGradient>
+            </defs>
+            <path d="M0,0 L54,0 Q70,50 54,100 L0,100 Z" fill="url(#hero-panel)" />
+          </svg>
+        </div>
+
+        {/* Fundo claro para mobile (coluna única) */}
+        <div className="absolute inset-x-0 top-0 h-3/5 bg-gradient-to-br from-gray-50 to-teal-50 md:hidden" />
+
+        <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-5 md:grid-cols-2">
+          <div className="relative z-10">
             <img src="/assets/afilaxy_master_2025logo.svg" alt="Afilaxy" className="mb-4 h-28" />
             <span className="mb-3 inline-block rounded-pill bg-primary/10 px-4 py-1 text-sm font-semibold text-primary">Versão Beta</span>
             <h1 className="mb-4 text-4xl font-bold leading-tight text-secondary md:text-5xl">
@@ -79,9 +96,11 @@ export default function Home() {
               </a>
             </div>
           </div>
-          <div>
-            <a href="https://www.youtube.com/watch?v=dzgaivAfjXY" target="_blank" rel="noopener noreferrer" aria-label="Assistir entrevista no YouTube">
-              <img src="/assets/entrevista.jpeg" alt="Entrevista Herbert Jung Sin — Papeando com Carlão" className="w-full rounded-card shadow-xl transition hover:scale-[1.02] cursor-pointer" />
+          <div className="relative z-10">
+            {/* Brilho âmbar atrás da imagem */}
+            <div className="absolute -inset-6 rounded-3xl bg-amber-400/20 blur-3xl" />
+            <a href="https://www.youtube.com/watch?v=dzgaivAfjXY" target="_blank" rel="noopener noreferrer" aria-label="Assistir entrevista no YouTube" className="relative block">
+              <img src="/assets/entrevista.jpeg" alt="Entrevista Herbert Jung Sin — Papeando com Carlão" className="relative w-full rounded-card shadow-xl transition hover:scale-[1.02] cursor-pointer" />
             </a>
           </div>
         </div>
