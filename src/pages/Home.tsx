@@ -1,4 +1,19 @@
 import Carousel from '../components/Carousel'
+import TestimonialCarousel from '../components/TestimonialCarousel'
+
+const testimonialImages = [
+  { src: '/assets/photos/depoimentos/01-isagerada.png', alt: 'Isagerada no Twitter: "Eu tô muito emocionada, sério!"' },
+  { src: '/assets/photos/depoimentos/02-sara-silva.png', alt: 'Sara Silva no Twitter: "Amei kkkjkkk não vou morrer mais"' },
+  { src: '/assets/photos/depoimentos/03-panda-contemporaneo.png', alt: 'PANDA Contemporâneo no Twitter: "que projeto lindo! estão de parabéns pela iniciativa!"' },
+  { src: '/assets/photos/depoimentos/04-aquele-cara.png', alt: 'aquele cara no Twitter: "Carai maluco olha que top!! Vou me cadastrar"' },
+  { src: '/assets/photos/depoimentos/05-ganza.png', alt: 'Ganza no Twitter: "Crlll mn, nem sabia disso, vou logo começar a usar esse app."' },
+  { src: '/assets/photos/depoimentos/06-a-filha-preferida.png', alt: 'A filha preferida no Twitter: "Compartilhando essa iniciativa maravilhosa, amigos ajudem a amiguinha aqui..."' },
+  { src: '/assets/photos/depoimentos/07-karina.png', alt: 'KARINA no Twitter: "muito legal essa ação!! Obrigada"' },
+  { src: '/assets/photos/depoimentos/08-silvia-logullo.png', alt: 'Silvia Logullo no Twitter: "HaHaHaHaHaHa!!!! Bom saber!"' },
+  { src: '/assets/photos/depoimentos/09-eduarda-roussenq.png', alt: 'eduarda roussenq no Twitter: "uaaaau! Essa iniciativa é incrível!!!!! Já até me cadastrei!"' },
+  { src: '/assets/photos/depoimentos/10-she-wolf.png', alt: 'she wolf no Twitter: "CARALHO ISSO EH GENIAL, UM APP PARA PESSOAS QUE TEM ASMA SE AJUDAREM NA HORA DA EMERGENCIA"' },
+  { src: '/assets/photos/depoimentos/11-radarbarone.png', alt: 'RadarBarone no Twitter: "Interessantíssimo! Parabéns pela iniciativa..."' },
+]
 
 const journeyImages = [
   { src: '/assets/photos/Demoday Inovativa.jpeg', alt: 'Demoday Inovativa' },
@@ -199,6 +214,17 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-5">
           <h2 className="mb-10 text-center text-3xl font-bold text-secondary">Nossa Jornada</h2>
           <Carousel images={journeyImages} />
+        </div>
+      </section>
+
+      {/* Depoimentos */}
+      <section id="depoimentos" className="py-20">
+        <div className="mx-auto max-w-7xl px-5">
+          <div className="mb-12 text-center">
+            <h2 className="text-3xl font-bold text-secondary">Quem Já Conheceu, Sentiu</h2>
+            <p className="mt-2 text-muted">Reações reais de pessoas que descobriram a iniciativa Afilaxy</p>
+          </div>
+          <TestimonialCarousel images={testimonialImages} />
         </div>
       </section>
 
