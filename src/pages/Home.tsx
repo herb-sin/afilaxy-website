@@ -217,17 +217,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Depoimentos */}
-      <section id="depoimentos" className="py-20">
-        <div className="mx-auto max-w-7xl px-5">
-          <div className="mb-12 text-center">
-            <h2 className="text-3xl font-bold text-secondary">Quem Já Conheceu, Sentiu</h2>
-            <p className="mt-2 text-muted">Reações reais de pessoas que descobriram a iniciativa Afilaxy</p>
-          </div>
-          <TestimonialCarousel images={testimonialImages} />
-        </div>
-      </section>
-
       {/* FAQ Regulatório */}
       <section id="faq" className="py-20">
         <div className="mx-auto max-w-3xl px-5">
@@ -248,6 +237,17 @@ export default function Home() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Depoimentos */}
+      <section id="depoimentos" className="py-20">
+        <div className="mx-auto max-w-7xl px-5">
+          <div className="mb-12 text-center">
+            <h2 className="text-3xl font-bold text-secondary">Quem Já Conheceu</h2>
+            <p className="mt-2 text-muted">Pessoas que descobriram o Afilaxy</p>
+          </div>
+          <TestimonialCarousel images={testimonialImages} />
         </div>
       </section>
 
