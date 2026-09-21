@@ -14,7 +14,17 @@ const values = [
   { icon: '❤️', title: 'Impacto social', desc: 'Se associe a uma iniciativa que evangeliza o acesso à saúde respiratória no SUS.' },
 ]
 
-type PlanType = 'pneumologia' | 'alergologia' | 'fisioterapia' | 'psicologia' | 'psiquiatria' | 'otorrino' | 'endocrinologia' | 'gastro' | 'cardiologia' | 'clinica'
+type PlanType = 'medico' | 'fisioterapia' | 'psicologia' | 'clinica'
+
+const specialties = [
+  { id: 'pneumologia', label: 'Pneumologia' },
+  { id: 'alergologia', label: 'Alergologia' },
+  { id: 'psiquiatria', label: 'Psiquiatria' },
+  { id: 'otorrino', label: 'Otorrinolaringologia' },
+  { id: 'endocrinologia', label: 'Endocrinologia' },
+  { id: 'gastro', label: 'Gastroenterologia' },
+  { id: 'cardiologia', label: 'Cardiologia' },
+]
 
 interface FormState {
   name: string
@@ -22,19 +32,20 @@ interface FormState {
   phone: string
   crm: string
   cnpj: string
+  specialty: string
   loading: boolean
   success: boolean
   error: string
 }
 
-const initialForm: FormState = { name: '', email: '', phone: '', crm: '', cnpj: '', loading: false, success: false, error: '' }
+const initialForm: FormState = { name: '', email: '', phone: '', crm: '', cnpj: '', specialty: '', loading: false, success: false, error: '' }
 
 const plans = [
   {
-    id: 'pneumologia' as PlanType,
-    icon: '🫁',
-    title: 'Pneumologia',
-    subtitle: 'Pessoa Física',
+    id: 'medico' as PlanType,
+    icon: '🩺',
+    title: 'Médicos',
+    subtitle: 'Pessoa Física · CRM',
     price: 'R$ 200/mês',
     features: [
       'Perfil completo no app (foto, bio, link de agendamento)',
@@ -43,20 +54,7 @@ const plans = [
       'Contato direto via WhatsApp',
     ],
     crmLabel: 'CRM',
-  },
-  {
-    id: 'alergologia' as PlanType,
-    icon: '🌸',
-    title: 'Alergologia',
-    subtitle: 'Pessoa Física',
-    price: 'R$ 200/mês',
-    features: [
-      'Perfil completo no app (foto, bio, link de agendamento)',
-      'Badge "Verificado pelo CFM"',
-      'Analytics de visualizações do perfil',
-      'Contato direto via WhatsApp',
-    ],
-    crmLabel: 'CRM',
+    hasSpecialty: true,
   },
   {
     id: 'fisioterapia' as PlanType,
@@ -71,6 +69,7 @@ const plans = [
       'Contato direto via WhatsApp',
     ],
     crmLabel: 'CREFITO',
+    hasSpecialty: false,
   },
   {
     id: 'psicologia' as PlanType,
@@ -85,76 +84,7 @@ const plans = [
       'Contato direto via WhatsApp',
     ],
     crmLabel: 'CRP',
-  },
-  {
-    id: 'psiquiatria' as PlanType,
-    icon: '💆',
-    title: 'Psiquiatria',
-    subtitle: 'Pessoa Física',
-    price: 'R$ 200/mês',
-    features: [
-      'Perfil completo no app (foto, bio, link de agendamento)',
-      'Badge "Verificado pelo CFM"',
-      'Analytics de visualizações do perfil',
-      'Contato direto via WhatsApp',
-    ],
-    crmLabel: 'CRM',
-  },
-  {
-    id: 'otorrino' as PlanType,
-    icon: '👂',
-    title: 'Otorrinolaringologia',
-    subtitle: 'Pessoa Física',
-    price: 'R$ 200/mês',
-    features: [
-      'Perfil completo no app (foto, bio, link de agendamento)',
-      'Badge "Verificado pelo CFM"',
-      'Analytics de visualizações do perfil',
-      'Contato direto via WhatsApp',
-    ],
-    crmLabel: 'CRM',
-  },
-  {
-    id: 'endocrinologia' as PlanType,
-    icon: '🔬',
-    title: 'Endocrinologia',
-    subtitle: 'Pessoa Física',
-    price: 'R$ 200/mês',
-    features: [
-      'Perfil completo no app (foto, bio, link de agendamento)',
-      'Badge "Verificado pelo CFM"',
-      'Analytics de visualizações do perfil',
-      'Contato direto via WhatsApp',
-    ],
-    crmLabel: 'CRM',
-  },
-  {
-    id: 'gastro' as PlanType,
-    icon: '🩺',
-    title: 'Gastroenterologia',
-    subtitle: 'Pessoa Física',
-    price: 'R$ 200/mês',
-    features: [
-      'Perfil completo no app (foto, bio, link de agendamento)',
-      'Badge "Verificado pelo CFM"',
-      'Analytics de visualizações do perfil',
-      'Contato direto via WhatsApp',
-    ],
-    crmLabel: 'CRM',
-  },
-  {
-    id: 'cardiologia' as PlanType,
-    icon: '❤️',
-    title: 'Cardiologia',
-    subtitle: 'Pessoa Física',
-    price: 'R$ 200/mês',
-    features: [
-      'Perfil completo no app (foto, bio, link de agendamento)',
-      'Badge "Verificado pelo CFM"',
-      'Analytics de visualizações do perfil',
-      'Contato direto via WhatsApp',
-    ],
-    crmLabel: 'CRM',
+    hasSpecialty: false,
   },
   {
     id: 'clinica' as PlanType,
@@ -170,6 +100,7 @@ const plans = [
       'Suporte prioritário',
     ],
     crmLabel: null,
+    hasSpecialty: false,
   },
 ]
 
@@ -179,9 +110,13 @@ function PlanForm({ plan }: { plan: typeof plans[0] }) {
   const set = (field: keyof FormState) => (e: React.ChangeEvent<HTMLInputElement>) =>
     setForm(f => ({ ...f, [field]: e.target.value }))
 
+  const setSpecialty = (e: React.ChangeEvent<HTMLSelectElement>) =>
+    setForm(f => ({ ...f, specialty: e.target.value }))
+
   const handleSubmit = async () => {
     const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)
     if (!form.name || !form.email || !emailValid) { alert('Preencha nome e e-mail válido.'); return }
+    if (plan.hasSpecialty && !form.specialty) { alert('Selecione sua especialidade.'); return }
     setForm(f => ({ ...f, loading: true, error: '' }))
     try {
       await saveLead({
@@ -192,7 +127,7 @@ function PlanForm({ plan }: { plan: typeof plans[0] }) {
         cnpj: form.cnpj,
         plan: plan.title,
         type: plan.id === 'clinica' ? 'clinica' : 'medico',
-        segment: plan.id,
+        segment: plan.hasSpecialty ? form.specialty : plan.id,
       })
       setForm(f => ({ ...f, success: true }))
     } catch (err: unknown) {
@@ -222,6 +157,13 @@ function PlanForm({ plan }: { plan: typeof plans[0] }) {
         className="w-full rounded-xl border-2 border-gray-200 px-4 py-3 text-sm transition focus:border-primary focus:outline-none" />
       <input type="tel" placeholder="Telefone" value={form.phone} onChange={set('phone')}
         className="w-full rounded-xl border-2 border-gray-200 px-4 py-3 text-sm transition focus:border-primary focus:outline-none" />
+      {plan.hasSpecialty && (
+        <select value={form.specialty} onChange={setSpecialty}
+          className="w-full rounded-xl border-2 border-gray-200 bg-white px-4 py-3 text-sm transition focus:border-primary focus:outline-none">
+          <option value="">Especialidade</option>
+          {specialties.map(sp => <option key={sp.id} value={sp.id}>{sp.label}</option>)}
+        </select>
+      )}
       {plan.crmLabel && (
         <>
           <input type="text" placeholder={plan.crmLabel} value={form.crm} onChange={set('crm')}
