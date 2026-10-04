@@ -7,7 +7,7 @@ const socials = [
   { href: 'https://www.facebook.com/Afilaxy', icon: 'fab fa-facebook', label: 'Facebook' },
   { href: 'https://wa.me/5511970657225', icon: 'fab fa-whatsapp', label: 'WhatsApp' },
   { href: 'https://www.youtube.com/@afilaxy', icon: 'fab fa-youtube', label: 'YouTube' },
-  { href: 'https://github.com/herb-sin/afilaxy', icon: 'fab fa-github', label: 'GitHub' },
+  { href: 'https://github.com/herb-sin/afilaxy-kmm', icon: 'fab fa-github', label: 'GitHub' },
 ]
 
 export default function Footer() {
