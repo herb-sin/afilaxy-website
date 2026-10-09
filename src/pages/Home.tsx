@@ -116,12 +116,16 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Imagem */}
+          {/* Imagem — Entrevistas */}
           <div className="relative z-10">
             <div className="absolute -inset-6 rounded-3xl bg-amber-400/20 blur-3xl" />
-            <a href="https://www.youtube.com/watch?v=dzgaivAfjXY" target="_blank" rel="noopener noreferrer" aria-label="Assistir entrevista no YouTube" className="relative block">
-              <img src="/assets/entrevista.jpeg" alt="Entrevista Herbert Jung Sin — Papeando com Carlão" className="relative w-full rounded-card shadow-xl transition hover:scale-[1.02] cursor-pointer" />
-            </a>
+            <div className="relative grid grid-cols-1 gap-3 sm:grid-cols-2">
+              {interviews.map((v, i) => (
+                <a key={i} href={v.href} target="_blank" rel="noopener noreferrer" aria-label={`Assistir ${v.alt} no YouTube`} className="group block">
+                  <img src={v.src} alt={v.alt} className="w-full rounded-card shadow-xl transition duration-300 group-hover:scale-[1.03] cursor-pointer" />
+                </a>
+              ))}
+            </div>
           </div>
 
         </div>
@@ -219,27 +223,6 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-5">
           <h2 className="mb-10 text-center text-3xl font-bold text-secondary">Nossa Jornada</h2>
           <Carousel images={journeyImages} />
-        </div>
-      </section>
-
-      {/* Entrevistas */}
-      <section id="entrevistas" className="py-20">
-        <div className="mx-auto max-w-7xl px-5">
-          <div className="mb-12 text-center">
-            <h2 className="text-3xl font-bold text-secondary">Entrevistas</h2>
-            <p className="mt-2 text-muted">Assista o que já contamos sobre o Afilaxy em outros programas</p>
-          </div>
-          <div className="mx-auto grid max-w-4xl gap-8 sm:grid-cols-2">
-            {interviews.map((v, i) => (
-              <a key={i} href={v.href} target="_blank" rel="noopener noreferrer" aria-label={`Assistir ${v.alt} no YouTube`}
-                className="group block">
-                <div className="overflow-hidden rounded-card shadow-lg">
-                  <img src={v.src} alt={v.alt} className="w-full transition duration-300 group-hover:scale-[1.03]" loading="lazy" />
-                </div>
-                <p className="mt-3 text-center font-semibold text-secondary">{v.program}</p>
-              </a>
-            ))}
-          </div>
         </div>
       </section>
 
