@@ -92,7 +92,7 @@ export default function Home() {
           </svg>
         </div>
 
-        <div className="relative mx-auto grid max-w-7xl items-center gap-8 px-5 md:grid-cols-2 md:gap-10">
+        <div className="relative mx-auto grid max-w-7xl items-center gap-8 px-5 md:grid-cols-[1fr_1.5fr] md:gap-10">
 
           {/* Texto */}
           <div className="relative z-10">
@@ -122,7 +122,9 @@ export default function Home() {
             <div className="relative grid grid-cols-1 gap-3 sm:grid-cols-2">
               {interviews.map((v, i) => (
                 <a key={i} href={v.href} target="_blank" rel="noopener noreferrer" aria-label={`Assistir ${v.alt} no YouTube`} className="group block">
-                  <img src={v.src} alt={v.alt} className="w-full rounded-card shadow-xl transition duration-300 group-hover:scale-[1.03] cursor-pointer" />
+                  <div className="aspect-[1339/800] overflow-hidden rounded-card shadow-xl">
+                    <img src={v.src} alt={v.alt} className="h-full w-full object-cover transition duration-300 group-hover:scale-[1.03] cursor-pointer" />
+                  </div>
                 </a>
               ))}
             </div>
