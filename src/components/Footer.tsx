@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 
 const socials = [
   { href: 'https://www.instagram.com/aflxy/', icon: 'fab fa-instagram', label: 'Instagram' },
+  { href: 'https://www.threads.com/@aflxy', icon: 'fab fa-threads', label: 'Threads' },
   { href: 'https://www.x.com/afilaxy', icon: 'fab fa-twitter', label: 'X' },
   { href: 'https://www.linkedin.com/company/afilaxy/', icon: 'fab fa-linkedin', label: 'LinkedIn' },
   { href: 'https://www.facebook.com/Afilaxy', icon: 'fab fa-facebook', label: 'Facebook' },

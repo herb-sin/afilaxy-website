@@ -288,6 +288,7 @@ export default function Home() {
             <div className="mt-10 flex flex-wrap justify-center gap-4">
               {[
                 { href: 'https://www.instagram.com/aflxy/', icon: 'fab fa-instagram' },
+                { href: 'https://www.threads.com/@aflxy', icon: 'fab fa-threads' },
                 { href: 'https://www.x.com/afilaxy', icon: 'fab fa-twitter' },
                 { href: 'https://www.linkedin.com/company/afilaxy/', icon: 'fab fa-linkedin' },
                 { href: 'https://www.facebook.com/Afilaxy', icon: 'fab fa-facebook' },
