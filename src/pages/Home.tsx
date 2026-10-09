@@ -15,6 +15,11 @@ const testimonialImages = [
   { src: '/assets/photos/depoimentos/11-radarbarone.png', alt: 'RadarBarone no Twitter: "Interessantíssimo! Parabéns pela iniciativa..."' },
 ]
 
+const interviews = [
+  { src: '/assets/entrevista.jpeg', href: 'https://www.youtube.com/watch?v=dzgaivAfjXY', program: 'Papeando com Carlão', alt: 'Entrevista Herbert Jung Sin — Papeando com Carlão' },
+  { src: '/assets/sempreSaude.jpeg', href: 'https://www.youtube.com/watch?v=HCzczHsIiS8&t=105s', program: 'Sempre Saúde', alt: 'Entrevista Herbert Jung Sin — Sempre Saúde' },
+]
+
 const journeyImages = [
   { src: '/assets/photos/Demoday Inovativa.jpeg', alt: 'Demoday Inovativa' },
   { src: '/assets/photos/GSK.jpeg', alt: 'GSK' },
@@ -214,6 +219,27 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-5">
           <h2 className="mb-10 text-center text-3xl font-bold text-secondary">Nossa Jornada</h2>
           <Carousel images={journeyImages} />
+        </div>
+      </section>
+
+      {/* Entrevistas */}
+      <section id="entrevistas" className="py-20">
+        <div className="mx-auto max-w-7xl px-5">
+          <div className="mb-12 text-center">
+            <h2 className="text-3xl font-bold text-secondary">Entrevistas</h2>
+            <p className="mt-2 text-muted">Assista o que já contamos sobre o Afilaxy em outros programas</p>
+          </div>
+          <div className="mx-auto grid max-w-4xl gap-8 sm:grid-cols-2">
+            {interviews.map((v, i) => (
+              <a key={i} href={v.href} target="_blank" rel="noopener noreferrer" aria-label={`Assistir ${v.alt} no YouTube`}
+                className="group block">
+                <div className="overflow-hidden rounded-card shadow-lg">
+                  <img src={v.src} alt={v.alt} className="w-full transition duration-300 group-hover:scale-[1.03]" loading="lazy" />
+                </div>
+                <p className="mt-3 text-center font-semibold text-secondary">{v.program}</p>
+              </a>
+            ))}
+          </div>
         </div>
       </section>
 
