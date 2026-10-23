@@ -21,6 +21,7 @@ const interviews = [
 ]
 
 const journeyImages = [
+  { src: '/assets/photos/ENIAC 2026.jpeg', alt: 'ENIAC 2026' },
   { src: '/assets/photos/Demoday Inovativa.jpeg', alt: 'Demoday Inovativa' },
   { src: '/assets/photos/GSK.jpeg', alt: 'GSK' },
   { src: '/assets/photos/Hackathon CBPMESP.jpeg', alt: 'Hackathon CBPMESP' },
@@ -29,7 +30,6 @@ const journeyImages = [
   { src: '/assets/photos/Stand CPBR14.jpeg', alt: 'Stand CPBR14' },
   { src: '/assets/photos/Pasted image.png', alt: 'Afilaxy' },
   { src: '/assets/photos/PythonBR.jpeg', alt: 'PythonBR' },
-  { src: '/assets/photos/ENIAC 2026.jpeg', alt: 'ENIAC 2026' },
 ]
 
 const emergencySteps = [
@@ -198,6 +198,19 @@ export default function Home() {
             <p className="mt-4 text-sm text-white/60">
               Estamos em fase de coleta de dados rotulados para treinar nosso futuro modelo de Machine Learning supervisionado.
             </p>
+            <p className="mt-6 text-white/90 leading-relaxed max-w-3xl mx-auto">
+              Em outubro de 2026, apresentamos os primeiros resultados desse modelo no <strong className="text-white">BRACIS/ENIAC 2026</strong>, em parceria com a UFPI: testamos 4 algoritmos de Machine Learning, e o melhor deles identificou risco de crise com 91,3% de precisão (AUC), usando justamente dados que o Afilaxy já coleta hoje, como os acionamentos do botão de emergência. É uma prova de conceito sobre dados sintéticos — o próximo passo é validar o modelo com dados reais dos usuários.
+            </p>
+            <div className="mt-5 flex flex-wrap justify-center gap-3">
+              <a href="/assets/ENIAC 2026 - Artigo.pdf" target="_blank" rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-pill bg-white/15 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/25">
+                📄 Ler o artigo (PDF)
+              </a>
+              <a href="/assets/ENIAC 2026 - Poster.pdf" target="_blank" rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-pill bg-white/15 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/25">
+                🖼️ Ver o pôster (PDF)
+              </a>
+            </div>
           </div>
         </div>
       </section>
