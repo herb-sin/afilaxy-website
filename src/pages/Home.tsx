@@ -29,6 +29,7 @@ const journeyImages = [
   { src: '/assets/photos/Stand CPBR14.jpeg', alt: 'Stand CPBR14' },
   { src: '/assets/photos/Pasted image.png', alt: 'Afilaxy' },
   { src: '/assets/photos/PythonBR.jpeg', alt: 'PythonBR' },
+  { src: '/assets/photos/ENIAC 2026.jpeg', alt: 'ENIAC 2026' },
 ]
 
 const emergencySteps = [
