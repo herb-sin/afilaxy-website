@@ -38,12 +38,6 @@ const emergencySteps = [
   { icon: '❤️', title: 'Você pode ajudar', desc: 'Esteja disponível para apoiar alguém da comunidade em um momento de necessidade.' },
 ]
 
-const riskSteps = [
-  { icon: '🌡️', title: 'Check-in de Bem-Estar', desc: 'Seus check-ins diários de bem-estar são combinados com dados de clima local, qualidade do ar (AQI), umidade e sazonalidade da sua região.' },
-  { icon: '📊', title: 'Índice de Bem-Estar e Risco', desc: 'Você recebe uma pontuação de 0 a 100 em quatro níveis — de Baixo a Muito Alto — calculada a partir dos seus check-ins e do contexto ambiental.' },
-  { icon: '💡', title: 'Orientações para o Dia a Dia', desc: '"Evite atividades ao ar livre hoje" ou "Qualidade do ar ruim — mantenha seu inalador por perto."' },
-]
-
 const techSources = [
   { icon: '🌤️', title: 'Dados Ambientais', desc: 'Temperatura, umidade, índice UV e vento via OpenMeteo.' },
   { icon: '💨', title: 'Qualidade do Ar', desc: 'AQI e PM2.5 por geolocalização via WAQI.' },
@@ -139,25 +133,12 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-5">
           <div className="mb-12 text-center">
             <h2 className="text-3xl font-bold text-secondary">Como Funciona</h2>
-            <p className="mt-2 text-muted">Rede de Apoio e Inteligência de Dados</p>
+            <p className="mt-2 text-muted">Rede de Apoio</p>
           </div>
 
           {/* Bloco: Rede de Emergência */}
-          <h3 className="mb-8 text-center text-xl font-bold text-secondary">Rede de Apoio</h3>
           <div className="mb-16 grid gap-8 md:grid-cols-3">
             {emergencySteps.map((s, i) => (
-              <div key={i} className="rounded-card bg-white p-8 text-center shadow-md transition hover:-translate-y-2 hover:shadow-xl">
-                <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-3xl">{s.icon}</div>
-                <h4 className="mb-2 text-xl font-bold text-secondary">{s.title}</h4>
-                <p className="text-muted">{s.desc}</p>
-              </div>
-            ))}
-          </div>
-
-          {/* Bloco: Previsão de Risco */}
-          <h3 className="mb-8 text-center text-xl font-bold text-secondary">Índice de Bem-Estar e Risco</h3>
-          <div className="grid gap-8 md:grid-cols-3">
-            {riskSteps.map((s, i) => (
               <div key={i} className="rounded-card bg-white p-8 text-center shadow-md transition hover:-translate-y-2 hover:shadow-xl">
                 <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-3xl">{s.icon}</div>
                 <h4 className="mb-2 text-xl font-bold text-secondary">{s.title}</h4>
