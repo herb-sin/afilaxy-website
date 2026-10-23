@@ -62,12 +62,6 @@ const faqs = [
   },
 ]
 
-const values = [
-  { icon: '🤝', title: 'Empatia', desc: 'Entendemos o que é passar por um momento difícil com asma. Por isso, nos ajudamos.' },
-  { icon: '🔄', title: 'Reciprocidade', desc: 'Somos uma comunidade de apoio mútuo e cuidado compartilhado.' },
-  { icon: '💛', title: 'Solidariedade', desc: 'O cuidado é o pilar da civilidade.' },
-]
-
 export default function Home() {
   return (
     <>
@@ -192,25 +186,6 @@ export default function Home() {
                 🖼️ Ver o pôster (PDF)
               </a>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Valores */}
-      <section id="valores" className="py-20">
-        <div className="mx-auto max-w-7xl px-5">
-          <div className="mb-12 text-center">
-            <h2 className="text-3xl font-bold text-secondary">Nossos Valores</h2>
-            <p className="mt-2 text-muted">O que nos une como comunidade</p>
-          </div>
-          <div className="grid gap-8 md:grid-cols-3">
-            {values.map((v, i) => (
-              <div key={i} className="rounded-card bg-white p-8 text-center shadow-md transition hover:-translate-y-2 hover:shadow-xl">
-                <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-3xl">{v.icon}</div>
-                <h3 className="mb-2 text-xl font-bold text-secondary">{v.title}</h3>
-                <p className="text-muted">{v.desc}</p>
-              </div>
-            ))}
           </div>
         </div>
       </section>
