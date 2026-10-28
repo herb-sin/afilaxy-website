@@ -11,7 +11,7 @@ import TermosDeUso from './pages/TermosDeUso'
 
 import ScrollToTop from './components/ScrollToTop'
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
+const app = (
   <React.StrictMode>
     <BrowserRouter>
       <ScrollToTop />
@@ -25,5 +25,16 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         </Route>
       </Routes>
     </BrowserRouter>
-  </React.StrictMode>,
+  </React.StrictMode>
 )
+
+const rootEl = document.getElementById('root')!
+
+if (rootEl.hasChildNodes()) {
+  // Build de produção: o HTML já chega pré-renderizado (scripts/prerender.mjs).
+  // hydrateRoot reaproveita esse DOM em vez de descartar e remontar do zero.
+  ReactDOM.hydrateRoot(rootEl, app)
+} else {
+  // `vite dev` ou qualquer build sem a etapa de pré-renderização: root vazio.
+  ReactDOM.createRoot(rootEl).render(app)
+}
