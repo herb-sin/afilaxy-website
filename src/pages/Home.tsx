@@ -21,7 +21,6 @@ const interviews = [
 ]
 
 const journeyImages = [
-  { src: '/assets/photos/ENIAC 2026.jpeg', alt: 'ENIAC 2026' },
   { src: '/assets/photos/Demoday Inovativa.jpeg', alt: 'Demoday Inovativa' },
   { src: '/assets/photos/GSK.jpeg', alt: 'GSK' },
   { src: '/assets/photos/Hackathon CBPMESP.jpeg', alt: 'Hackathon CBPMESP' },
@@ -173,6 +172,8 @@ export default function Home() {
             <p className="mt-4 text-sm text-white/60">
               Estamos em fase de coleta de dados rotulados para treinar nosso futuro modelo de Machine Learning supervisionado.
             </p>
+            <img src="/assets/photos/ENIAC 2026.jpeg" alt="Herbert Jung Sin e Martony Demes da Silva apresentando o pôster da pesquisa no BRACIS/ENIAC 2026"
+              className="mx-auto mt-6 w-full max-w-md rounded-card shadow-lg" loading="lazy" />
             <p className="mt-6 text-white/90 leading-relaxed max-w-3xl mx-auto">
               Em outubro de 2026, apresentamos os primeiros resultados desse modelo no <strong className="text-white">BRACIS/ENIAC 2026</strong>, em parceria com a UFPI: testamos 4 algoritmos de Machine Learning, e o melhor deles identificou risco de crise com 91,3% de precisão (AUC), usando justamente dados que o Afilaxy já coleta hoje, como os acionamentos do botão de emergência. É uma prova de conceito sobre dados sintéticos — o próximo passo é validar o modelo com dados reais dos usuários.
             </p>
