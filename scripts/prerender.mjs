@@ -40,11 +40,16 @@ const MIME = {
 
 // Mesmas rotas públicas listadas em public/sitemap.xml. /success fica de fora de
 // propósito: só existe depois de um pagamento confirmado, não é página de conteúdo.
+//
+// Saída em arquivo .html "achatado" (ex.: profissionais.html), não em
+// profissionais/index.html: o Netlify serve esse formato direto em /profissionais,
+// sem redirecionamento. A pasta + index.html gera um 301 de /profissionais para
+// /profissionais/, que não existe em nenhum link interno nem no sitemap.xml.
 const ROUTES = [
   { path: '/', out: 'index.html' },
-  { path: '/profissionais', out: 'profissionais/index.html' },
-  { path: '/privacidade', out: 'privacidade/index.html' },
-  { path: '/termos', out: 'termos/index.html' },
+  { path: '/profissionais', out: 'profissionais.html' },
+  { path: '/privacidade', out: 'privacidade.html' },
+  { path: '/termos', out: 'termos.html' },
 ]
 
 async function resolveFile(urlPath) {
