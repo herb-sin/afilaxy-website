@@ -252,7 +252,7 @@ export default function Home() {
             <p className="mt-4 text-sm text-white/60">Versão Beta — disponível para Android e iOS (TestFlight).</p>
 
             <div className="mt-8 flex justify-center">
-              <img src="/assets/photos/InovAtiva.png" alt="InovAtiva Brasil" className="h-64 rounded-card object-contain md:h-80" />
+              <img src="/assets/photos/InovAtiva.jpg" alt="InovAtiva Brasil" className="h-64 rounded-card object-contain md:h-80" loading="lazy" />
             </div>
 
             {/* Redes sociais */}
