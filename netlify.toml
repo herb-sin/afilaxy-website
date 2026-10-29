@@ -6,3 +6,14 @@
   from = "/*"
   to = "/index.html"
   status = 200
+
+# Cabeçalhos de segurança de baixo risco — CSP e Trusted Types ficam de fora
+# de propósito, exigem mapear cada domínio externo usado (Firebase, reCAPTCHA,
+# Ahrefs, Stripe, fontes) e testar com cuidado antes, sob risco de bloquear
+# recursos legítimos do próprio site.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains"
+    X-Frame-Options = "DENY"
+    Cross-Origin-Opener-Policy = "same-origin-allow-popups"

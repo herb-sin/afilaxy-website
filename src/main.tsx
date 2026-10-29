@@ -41,13 +41,10 @@ const app = (
   </React.StrictMode>
 )
 
-const rootEl = document.getElementById('root')!
-
-if (rootEl.hasChildNodes()) {
-  // Build de produção: o HTML já chega pré-renderizado (scripts/prerender.mjs).
-  // hydrateRoot reaproveita esse DOM em vez de descartar e remontar do zero.
-  ReactDOM.hydrateRoot(rootEl, app)
-} else {
-  // `vite dev` ou qualquer build sem a etapa de pré-renderização: root vazio.
-  ReactDOM.createRoot(rootEl).render(app)
-}
+// O HTML pode chegar pré-renderizado (scripts/prerender.mjs), com conteúdo
+// de verdade dentro de #root — isso é só para crawlers e para o primeiro
+// pintar da tela. createRoot substitui esse conteúdo pelo React de verdade
+// na sequência, de propósito: tentar reaproveitar esse HTML com hydrateRoot
+// causava erros de hidratação sempre que algo client-only (ex.: largura da
+// tela) differia entre o momento da pré-renderização e o do visitante real.
+ReactDOM.createRoot(document.getElementById('root')!).render(app)

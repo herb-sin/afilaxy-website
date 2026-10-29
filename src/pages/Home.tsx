@@ -135,7 +135,7 @@ export default function Home() {
             {emergencySteps.map((s, i) => (
               <div key={i} className="rounded-card bg-white p-8 text-center shadow-md transition hover:-translate-y-2 hover:shadow-xl">
                 <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-3xl">{s.icon}</div>
-                <h4 className="mb-2 text-xl font-bold text-secondary">{s.title}</h4>
+                <h3 className="mb-2 text-xl font-bold text-secondary">{s.title}</h3>
                 <p className="text-muted">{s.desc}</p>
               </div>
             ))}
@@ -161,7 +161,7 @@ export default function Home() {
             {techSources.map((t, i) => (
               <div key={i} className="rounded-card bg-white/10 p-6 text-center backdrop-blur-sm transition hover:-translate-y-2 hover:bg-white/20">
                 <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-white/20 text-2xl">{t.icon}</div>
-                <h4 className="mb-2 font-bold text-white">{t.title}</h4>
+                <h3 className="mb-2 font-bold text-white">{t.title}</h3>
                 <p className="text-sm text-white/70">{t.desc}</p>
               </div>
             ))}
@@ -210,7 +210,7 @@ export default function Home() {
           <div className="space-y-4">
             {faqs.map((faq, i) => (
               <div key={i} className="rounded-card border border-gray-100 bg-white p-6 shadow-sm">
-                <h4 className="mb-3 font-bold text-secondary">{faq.q}</h4>
+                <h3 className="mb-3 font-bold text-secondary">{faq.q}</h3>
                 <p className="text-muted text-sm leading-relaxed">{faq.a}</p>
                 {faq.link && (
                   <a href={faq.link.href} className="mt-3 inline-block text-sm font-semibold text-primary hover:underline">

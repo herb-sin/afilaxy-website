@@ -25,7 +25,7 @@ export default function Footer() {
 
         {/* Links */}
         <div>
-          <h4 className="mb-4 font-semibold text-secondary">Links Rápidos</h4>
+          <h3 className="mb-4 font-semibold text-secondary">Links Rápidos</h3>
           <ul className="space-y-2 text-sm">
             <li><Link to="/" className="text-muted transition hover:text-primary">Início</Link></li>
             <li><Link to="/profissionais" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-muted transition hover:text-primary">Profissionais</Link></li>
@@ -36,7 +36,7 @@ export default function Footer() {
 
         {/* Social */}
         <div>
-          <h4 className="mb-4 font-semibold text-secondary">Redes Sociais</h4>
+          <h3 className="mb-4 font-semibold text-secondary">Redes Sociais</h3>
           <div className="flex flex-wrap gap-3">
             {socials.map((s) => (
               <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.label}
