@@ -2,17 +2,17 @@ import Carousel from '../components/Carousel'
 import TestimonialCarousel from '../components/TestimonialCarousel'
 
 const testimonialImages = [
-  { src: '/assets/photos/depoimentos/01-isagerada.png', alt: 'Isagerada no Twitter: "Eu tô muito emocionada, sério!"' },
-  { src: '/assets/photos/depoimentos/02-sara-silva.png', alt: 'Sara Silva no Twitter: "Amei kkkjkkk não vou morrer mais"' },
-  { src: '/assets/photos/depoimentos/03-panda-contemporaneo.png', alt: 'PANDA Contemporâneo no Twitter: "que projeto lindo! estão de parabéns pela iniciativa!"' },
-  { src: '/assets/photos/depoimentos/04-aquele-cara.png', alt: 'aquele cara no Twitter: "Carai maluco olha que top!! Vou me cadastrar"' },
-  { src: '/assets/photos/depoimentos/05-ganza.png', alt: 'Ganza no Twitter: "Crlll mn, nem sabia disso, vou logo começar a usar esse app."' },
-  { src: '/assets/photos/depoimentos/06-a-filha-preferida.png', alt: 'A filha preferida no Twitter: "Compartilhando essa iniciativa maravilhosa, amigos ajudem a amiguinha aqui..."' },
-  { src: '/assets/photos/depoimentos/07-karina.png', alt: 'KARINA no Twitter: "muito legal essa ação!! Obrigada"' },
-  { src: '/assets/photos/depoimentos/08-silvia-logullo.png', alt: 'Silvia Logullo no Twitter: "HaHaHaHaHaHa!!!! Bom saber!"' },
-  { src: '/assets/photos/depoimentos/09-eduarda-roussenq.png', alt: 'eduarda roussenq no Twitter: "uaaaau! Essa iniciativa é incrível!!!!! Já até me cadastrei!"' },
-  { src: '/assets/photos/depoimentos/10-she-wolf.png', alt: 'she wolf no Twitter: "CARALHO ISSO EH GENIAL, UM APP PARA PESSOAS QUE TEM ASMA SE AJUDAREM NA HORA DA EMERGENCIA"' },
-  { src: '/assets/photos/depoimentos/11-radarbarone.png', alt: 'RadarBarone no Twitter: "Interessantíssimo! Parabéns pela iniciativa..."' },
+  { src: '/assets/photos/depoimentos/01-isagerada.png', alt: 'Isagerada no Twitter: "Eu tô muito emocionada, sério!"', w: 650, h: 260 },
+  { src: '/assets/photos/depoimentos/02-sara-silva.png', alt: 'Sara Silva no Twitter: "Amei kkkjkkk não vou morrer mais"', w: 650, h: 300 },
+  { src: '/assets/photos/depoimentos/03-panda-contemporaneo.png', alt: 'PANDA Contemporâneo no Twitter: "que projeto lindo! estão de parabéns pela iniciativa!"', w: 650, h: 132 },
+  { src: '/assets/photos/depoimentos/04-aquele-cara.png', alt: 'aquele cara no Twitter: "Carai maluco olha que top!! Vou me cadastrar"', w: 650, h: 148 },
+  { src: '/assets/photos/depoimentos/05-ganza.png', alt: 'Ganza no Twitter: "Crlll mn, nem sabia disso, vou logo começar a usar esse app."', w: 650, h: 140 },
+  { src: '/assets/photos/depoimentos/06-a-filha-preferida.png', alt: 'A filha preferida no Twitter: "Compartilhando essa iniciativa maravilhosa, amigos ajudem a amiguinha aqui..."', w: 650, h: 255 },
+  { src: '/assets/photos/depoimentos/07-karina.png', alt: 'KARINA no Twitter: "muito legal essa ação!! Obrigada"', w: 650, h: 152 },
+  { src: '/assets/photos/depoimentos/08-silvia-logullo.png', alt: 'Silvia Logullo no Twitter: "HaHaHaHaHaHa!!!! Bom saber!"', w: 650, h: 268 },
+  { src: '/assets/photos/depoimentos/09-eduarda-roussenq.png', alt: 'eduarda roussenq no Twitter: "uaaaau! Essa iniciativa é incrível!!!!! Já até me cadastrei!"', w: 650, h: 132 },
+  { src: '/assets/photos/depoimentos/10-she-wolf.png', alt: 'she wolf no Twitter: "CARALHO ISSO EH GENIAL, UM APP PARA PESSOAS QUE TEM ASMA SE AJUDAREM NA HORA DA EMERGENCIA"', w: 650, h: 290 },
+  { src: '/assets/photos/depoimentos/11-radarbarone.png', alt: 'RadarBarone no Twitter: "Interessantíssimo! Parabéns pela iniciativa..."', w: 650, h: 120 },
 ]
 
 const interviews = [
@@ -27,7 +27,7 @@ const journeyImages = [
   { src: '/assets/photos/I Forum Asma Grave.jpeg', alt: 'I Forum Asma Grave' },
   { src: '/assets/photos/I Fórum Gaúcho Inspire Sonhos.jpeg', alt: 'I Fórum Gaúcho Inspire Sonhos' },
   { src: '/assets/photos/Stand CPBR14.jpeg', alt: 'Stand CPBR14' },
-  { src: '/assets/photos/Pasted image.png', alt: 'Afilaxy' },
+  { src: '/assets/photos/Pasted image.jpg', alt: 'Afilaxy' },
   { src: '/assets/photos/PythonBR.jpeg', alt: 'PythonBR' },
 ]
 
@@ -84,7 +84,7 @@ export default function Home() {
 
           {/* Texto */}
           <div className="relative z-10">
-            <img src="/assets/afilaxy_master_2025logo.svg" alt="Afilaxy" className="mb-4 h-20 md:h-28" />
+            <img src="/assets/afilaxy_master_2025logo.svg" alt="Afilaxy" width={181} height={143} className="mb-4 h-20 md:h-28" />
             <span className="mb-3 inline-block rounded-pill bg-primary/10 px-4 py-1 text-sm font-semibold text-primary">Versão Beta</span>
             <h1 className="mb-4 text-3xl font-bold leading-tight text-secondary md:text-5xl">
               A rede de <span className="text-primary">quem tem Asma</span>
@@ -111,7 +111,8 @@ export default function Home() {
               {interviews.map((v, i) => (
                 <a key={i} href={v.href} target="_blank" rel="noopener noreferrer" aria-label={`Assistir ${v.alt} no YouTube`} className="group block">
                   <div className="aspect-[1339/800] overflow-hidden rounded-card shadow-xl">
-                    <img src={v.src} alt={v.alt} className="h-full w-full object-cover transition duration-300 group-hover:scale-[1.03] cursor-pointer" />
+                    <img src={v.src} alt={v.alt} className="h-full w-full object-cover transition duration-300 group-hover:scale-[1.03] cursor-pointer"
+                      {...(i === 0 ? { fetchPriority: 'high' as const } : {})} />
                   </div>
                 </a>
               ))}
@@ -173,7 +174,7 @@ export default function Home() {
               Estamos em fase de coleta de dados rotulados para treinar nosso futuro modelo de Machine Learning supervisionado.
             </p>
             <img src="/assets/photos/ENIAC 2026.jpeg" alt="Herbert Jung Sin e Martony Demes da Silva apresentando o pôster da pesquisa no BRACIS/ENIAC 2026"
-              className="mx-auto mt-6 w-full max-w-md rounded-card shadow-lg" loading="lazy" />
+              width={900} height={675} className="mx-auto mt-6 w-full max-w-md rounded-card shadow-lg" loading="lazy" />
             <p className="mt-6 text-white/90 leading-relaxed max-w-3xl mx-auto">
               Em outubro de 2026, apresentamos os primeiros resultados desse modelo no <strong className="text-white">BRACIS/ENIAC 2026</strong>, em parceria com a UFPI: testamos 4 algoritmos de Machine Learning, e o melhor deles identificou risco de crise com 91,3% de precisão (AUC), usando justamente dados que o Afilaxy já coleta hoje, como os acionamentos do botão de emergência. É uma prova de conceito sobre dados sintéticos — o próximo passo é validar o modelo com dados reais dos usuários.
             </p>
@@ -252,7 +253,7 @@ export default function Home() {
             <p className="mt-4 text-sm text-white/60">Versão Beta — disponível para Android e iOS (TestFlight).</p>
 
             <div className="mt-8 flex justify-center">
-              <img src="/assets/photos/InovAtiva.jpg" alt="InovAtiva Brasil" className="h-64 rounded-card object-contain md:h-80" loading="lazy" />
+              <img src="/assets/photos/InovAtiva.jpg" alt="InovAtiva Brasil" width={640} height={640} className="h-64 rounded-card object-contain md:h-80" loading="lazy" />
             </div>
 
             {/* Redes sociais */}

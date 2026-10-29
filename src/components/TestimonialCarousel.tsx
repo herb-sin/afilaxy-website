@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback, useRef } from 'react'
 
 interface Props {
-  images: { src: string; alt: string }[]
+  images: { src: string; alt: string; w: number; h: number }[]
 }
 
 /**
@@ -61,7 +61,7 @@ export default function TestimonialCarousel({ images }: Props) {
           <div ref={trackRef} className="flex items-start transition-transform duration-300 ease-in-out" style={{ transform: `translateX(-${index * 100}%)` }}>
             {images.map((img, i) => (
               <div key={i} className="w-full flex-shrink-0 cursor-zoom-in" onClick={() => setLightbox(true)}>
-                <img src={img.src} alt={img.alt} className="w-full" loading="lazy" onLoad={measure} />
+                <img src={img.src} alt={img.alt} width={img.w} height={img.h} className="w-full" loading="lazy" onLoad={measure} />
               </div>
             ))}
           </div>
