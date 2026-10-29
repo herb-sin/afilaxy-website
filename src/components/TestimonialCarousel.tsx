@@ -78,10 +78,12 @@ export default function TestimonialCarousel({ images }: Props) {
         </button>
 
         {/* Dots */}
-        <div className="mt-4 flex justify-center gap-2">
+        <div className="mt-4 flex justify-center gap-1">
           {images.map((_, i) => (
             <button key={i} aria-label={`Ir para depoimento ${i + 1}`} onClick={() => setIndex(i)}
-              className={`h-3 w-3 rounded-full transition ${i === index ? 'scale-125 bg-primary' : 'bg-black/20 hover:bg-black/40'}`} />
+              className="flex h-6 w-6 items-center justify-center">
+              <span className={`block h-3 w-3 rounded-full transition ${i === index ? 'scale-125 bg-primary' : 'bg-black/20 hover:bg-black/40'}`} />
+            </button>
           ))}
         </div>
       </div>

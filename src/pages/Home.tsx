@@ -259,16 +259,16 @@ export default function Home() {
             {/* Redes sociais */}
             <div className="mt-10 flex flex-wrap justify-center gap-4">
               {[
-                { href: 'https://www.instagram.com/aflxy/', icon: 'fab fa-instagram' },
-                { href: 'https://www.threads.com/@aflxy', icon: 'fab fa-threads' },
-                { href: 'https://www.x.com/afilaxy', icon: 'fab fa-twitter' },
-                { href: 'https://www.linkedin.com/company/afilaxy/', icon: 'fab fa-linkedin' },
-                { href: 'https://www.facebook.com/Afilaxy', icon: 'fab fa-facebook' },
-                { href: 'https://wa.me/5511970657225', icon: 'fab fa-whatsapp' },
-                { href: 'https://www.youtube.com/@afilaxy', icon: 'fab fa-youtube' },
-                { href: 'https://github.com/herb-sin/afilaxy-kmm', icon: 'fab fa-github' },
+                { href: 'https://www.instagram.com/aflxy/', icon: 'fab fa-instagram', label: 'Instagram' },
+                { href: 'https://www.threads.com/@aflxy', icon: 'fab fa-threads', label: 'Threads' },
+                { href: 'https://www.x.com/afilaxy', icon: 'fab fa-twitter', label: 'X' },
+                { href: 'https://www.linkedin.com/company/afilaxy/', icon: 'fab fa-linkedin', label: 'LinkedIn' },
+                { href: 'https://www.facebook.com/Afilaxy', icon: 'fab fa-facebook', label: 'Facebook' },
+                { href: 'https://wa.me/5511970657225', icon: 'fab fa-whatsapp', label: 'WhatsApp' },
+                { href: 'https://www.youtube.com/@afilaxy', icon: 'fab fa-youtube', label: 'YouTube' },
+                { href: 'https://github.com/herb-sin/afilaxy-kmm', icon: 'fab fa-github', label: 'GitHub' },
               ].map((s) => (
-                <a key={s.icon} href={s.href} target="_blank" rel="noopener noreferrer"
+                <a key={s.icon} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.label}
                   className="flex h-14 w-14 items-center justify-center rounded-full bg-white/10 text-xl text-white transition hover:-translate-y-1 hover:bg-primary hover:shadow-lg">
                   <i className={s.icon} />
                 </a>
