@@ -19,7 +19,7 @@ export default function Footer() {
         <div>
           <img src="/assets/afilaxy_master_2025logo.svg" alt="Afilaxy" className="mb-4 h-20" />
           <p className="max-w-xs text-sm text-muted">
-            A rede social feita por e para pessoas com asma.
+            A rede feita por e para pessoas com asma.
           </p>
         </div>
 
