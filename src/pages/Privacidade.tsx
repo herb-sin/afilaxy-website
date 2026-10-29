@@ -141,6 +141,10 @@ export default function Privacidade() {
               <strong>OpenMeteo</strong> — dados meteorológicos. Recebe localização aproximada por
               cidade/região.
             </li>
+            <li>
+              <strong>Ahrefs Web Analytics</strong> — estatísticas de audiência do site institucional
+              (afilaxy.com). Não usa cookies e não coleta dados pessoais identificáveis.
+            </li>
           </ul>
           <p>Nenhum dos processadores recebe dados do Perfil Médico autodeclarado ou dados de localização precisa do Usuário.</p>
 
