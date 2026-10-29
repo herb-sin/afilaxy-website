@@ -28,7 +28,7 @@ export default function Navbar() {
     <header className="fixed top-0 z-50 w-full bg-white/95 shadow-sm backdrop-blur">
       <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5">
         <Link to="/" className="flex items-center">
-          <img src="/assets/logo_master.svg" alt="Afilaxy" width={136} height={142} className="h-10" />
+          <img src="/assets/logo_master.svg" alt="Afilaxy" width={136} height={142} className="h-10 w-[38px]" />
         </Link>
 
         {/* Desktop */}

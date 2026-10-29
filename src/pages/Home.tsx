@@ -85,7 +85,7 @@ export default function Home() {
 
           {/* Texto */}
           <div className="relative z-10">
-            <img src="/assets/afilaxy_master_2025logo.svg" alt="Afilaxy" width={181} height={143} className="mb-4 h-20 md:h-28" />
+            <img src="/assets/afilaxy_master_2025logo.svg" alt="Afilaxy" width={181} height={143} className="mb-4 h-20 w-[101px] md:h-28 md:w-[142px]" />
             <span className="mb-3 inline-block rounded-pill bg-primary/10 px-4 py-1 text-sm font-semibold text-primary">Versão Beta</span>
             <h1 className="mb-4 text-3xl font-bold leading-tight text-secondary md:text-5xl">
               A rede de <span className="text-primary">quem tem Asma</span>
@@ -254,7 +254,7 @@ export default function Home() {
             <p className="mt-4 text-sm text-white/60">Versão Beta — disponível para Android e iOS (TestFlight).</p>
 
             <div className="mt-8 flex justify-center">
-              <img src="/assets/photos/InovAtiva.jpg" alt="InovAtiva Brasil" width={640} height={640} className="h-64 rounded-card object-contain md:h-80" loading="lazy" />
+              <img src="/assets/photos/InovAtiva.jpg" alt="InovAtiva Brasil" width={640} height={640} className="h-64 w-64 rounded-card object-contain md:h-80 md:w-80" loading="lazy" />
             </div>
 
             {/* Redes sociais */}

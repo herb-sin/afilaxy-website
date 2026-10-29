@@ -18,7 +18,7 @@ export default function Footer() {
       <div className="mx-auto grid max-w-7xl gap-10 px-5 pb-16 md:grid-cols-3">
         {/* Brand */}
         <div>
-          <img src="/assets/afilaxy_master_2025logo.svg" alt="Afilaxy" width={181} height={143} className="mb-4 h-20" />
+          <img src="/assets/afilaxy_master_2025logo.svg" alt="Afilaxy" width={181} height={143} className="mb-4 h-20 w-[101px]" />
           <p className="max-w-xs text-sm text-muted">
             A rede feita por e para pessoas com asma.
           </p>
