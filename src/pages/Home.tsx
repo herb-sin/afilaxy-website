@@ -1,5 +1,6 @@
 import Carousel from '../components/Carousel'
 import TestimonialCarousel from '../components/TestimonialCarousel'
+import SocialIcon from '../components/SocialIcon'
 
 const testimonialImages = [
   { src: '/assets/photos/depoimentos/01-isagerada.png', alt: 'Isagerada no Twitter: "Eu tô muito emocionada, sério!"', w: 650, h: 260 },
@@ -174,7 +175,7 @@ export default function Home() {
               Estamos em fase de coleta de dados rotulados para treinar nosso futuro modelo de Machine Learning supervisionado.
             </p>
             <img src="/assets/photos/ENIAC 2026.jpeg" alt="Herbert Jung Sin e Martony Demes da Silva apresentando o pôster da pesquisa no BRACIS/ENIAC 2026"
-              width={900} height={675} className="mx-auto mt-6 w-full max-w-md rounded-card shadow-lg" loading="lazy" />
+              width={700} height={525} className="mx-auto mt-6 w-full max-w-md rounded-card shadow-lg" loading="lazy" />
             <p className="mt-6 text-white/90 leading-relaxed max-w-3xl mx-auto">
               Em outubro de 2026, apresentamos os primeiros resultados desse modelo no <strong className="text-white">BRACIS/ENIAC 2026</strong>, em parceria com a UFPI: testamos 4 algoritmos de Machine Learning, e o melhor deles identificou risco de crise com 91,3% de precisão (AUC), usando justamente dados que o Afilaxy já coleta hoje, como os acionamentos do botão de emergência. É uma prova de conceito sobre dados sintéticos — o próximo passo é validar o modelo com dados reais dos usuários.
             </p>
@@ -259,18 +260,18 @@ export default function Home() {
             {/* Redes sociais */}
             <div className="mt-10 flex flex-wrap justify-center gap-4">
               {[
-                { href: 'https://www.instagram.com/aflxy/', icon: 'fab fa-instagram', label: 'Instagram' },
-                { href: 'https://www.threads.com/@aflxy', icon: 'fab fa-threads', label: 'Threads' },
-                { href: 'https://www.x.com/afilaxy', icon: 'fab fa-twitter', label: 'X' },
-                { href: 'https://www.linkedin.com/company/afilaxy/', icon: 'fab fa-linkedin', label: 'LinkedIn' },
-                { href: 'https://www.facebook.com/Afilaxy', icon: 'fab fa-facebook', label: 'Facebook' },
-                { href: 'https://wa.me/5511970657225', icon: 'fab fa-whatsapp', label: 'WhatsApp' },
-                { href: 'https://www.youtube.com/@afilaxy', icon: 'fab fa-youtube', label: 'YouTube' },
-                { href: 'https://github.com/herb-sin/afilaxy-kmm', icon: 'fab fa-github', label: 'GitHub' },
+                { href: 'https://www.instagram.com/aflxy/', icon: 'instagram' as const, label: 'Instagram' },
+                { href: 'https://www.threads.com/@aflxy', icon: 'threads' as const, label: 'Threads' },
+                { href: 'https://www.x.com/afilaxy', icon: 'twitter' as const, label: 'X' },
+                { href: 'https://www.linkedin.com/company/afilaxy/', icon: 'linkedin' as const, label: 'LinkedIn' },
+                { href: 'https://www.facebook.com/Afilaxy', icon: 'facebook' as const, label: 'Facebook' },
+                { href: 'https://wa.me/5511970657225', icon: 'whatsapp' as const, label: 'WhatsApp' },
+                { href: 'https://www.youtube.com/@afilaxy', icon: 'youtube' as const, label: 'YouTube' },
+                { href: 'https://github.com/herb-sin/afilaxy-kmm', icon: 'github' as const, label: 'GitHub' },
               ].map((s) => (
                 <a key={s.icon} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.label}
-                  className="flex h-14 w-14 items-center justify-center rounded-full bg-white/10 text-xl text-white transition hover:-translate-y-1 hover:bg-primary hover:shadow-lg">
-                  <i className={s.icon} />
+                  className="flex h-14 w-14 items-center justify-center rounded-full bg-white/10 text-white transition hover:-translate-y-1 hover:bg-primary hover:shadow-lg">
+                  <SocialIcon name={s.icon} className="h-5 w-5" />
                 </a>
               ))}
             </div>

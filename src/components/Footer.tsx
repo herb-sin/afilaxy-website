@@ -1,14 +1,15 @@
 import { Link } from 'react-router-dom'
+import SocialIcon, { type SocialIconName } from './SocialIcon'
 
-const socials = [
-  { href: 'https://www.instagram.com/aflxy/', icon: 'fab fa-instagram', label: 'Instagram' },
-  { href: 'https://www.threads.com/@aflxy', icon: 'fab fa-threads', label: 'Threads' },
-  { href: 'https://www.x.com/afilaxy', icon: 'fab fa-twitter', label: 'X' },
-  { href: 'https://www.linkedin.com/company/afilaxy/', icon: 'fab fa-linkedin', label: 'LinkedIn' },
-  { href: 'https://www.facebook.com/Afilaxy', icon: 'fab fa-facebook', label: 'Facebook' },
-  { href: 'https://wa.me/5511970657225', icon: 'fab fa-whatsapp', label: 'WhatsApp' },
-  { href: 'https://www.youtube.com/@afilaxy', icon: 'fab fa-youtube', label: 'YouTube' },
-  { href: 'https://github.com/herb-sin/afilaxy-kmm', icon: 'fab fa-github', label: 'GitHub' },
+const socials: { href: string; icon: SocialIconName; label: string }[] = [
+  { href: 'https://www.instagram.com/aflxy/', icon: 'instagram', label: 'Instagram' },
+  { href: 'https://www.threads.com/@aflxy', icon: 'threads', label: 'Threads' },
+  { href: 'https://www.x.com/afilaxy', icon: 'twitter', label: 'X' },
+  { href: 'https://www.linkedin.com/company/afilaxy/', icon: 'linkedin', label: 'LinkedIn' },
+  { href: 'https://www.facebook.com/Afilaxy', icon: 'facebook', label: 'Facebook' },
+  { href: 'https://wa.me/5511970657225', icon: 'whatsapp', label: 'WhatsApp' },
+  { href: 'https://www.youtube.com/@afilaxy', icon: 'youtube', label: 'YouTube' },
+  { href: 'https://github.com/herb-sin/afilaxy-kmm', icon: 'github', label: 'GitHub' },
 ]
 
 export default function Footer() {
@@ -41,7 +42,7 @@ export default function Footer() {
             {socials.map((s) => (
               <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.label}
                 className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 text-secondary transition hover:bg-primary hover:text-white">
-                <i className={s.icon} />
+                <SocialIcon name={s.icon} className="h-4 w-4" />
               </a>
             ))}
           </div>

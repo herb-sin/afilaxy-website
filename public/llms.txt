@@ -1,0 +1,25 @@
+# Afilaxy
+
+> Afilaxy é a rede social de apoio mútuo para pessoas com asma. Conecta usuários em momentos de emergência respiratória, como a falta de um inalador, e acompanha o bem-estar diário com base em check-ins pessoais e dados ambientais (qualidade do ar, clima, sazonalidade).
+
+O Afilaxy não realiza diagnóstico médico. O Índice de Bem-Estar e Risco é uma pontuação informativa calculada por um algoritmo heurístico, não um diagnóstico, e não substitui orientação de um profissional de saúde habilitado.
+
+## Páginas
+
+- [Página inicial](https://afilaxy.com/): Visão geral do produto, como funciona a rede de apoio e o Índice de Bem-Estar e Risco.
+- [Para profissionais de saúde](https://afilaxy.com/profissionais): Planos para médicos e outros profissionais de saúde terem perfil verificado no app.
+- [Política de Privacidade](https://afilaxy.com/privacidade): Como os dados pessoais dos usuários são tratados, em conformidade com a LGPD.
+- [Termos de Uso](https://afilaxy.com/termos): Termos gerais e condições de uso da plataforma.
+
+## Baixe o app
+
+- [Android (Google Play)](https://play.google.com/store/apps/details?id=com.afilaxy.app&hl=pt_BR)
+- [iOS (TestFlight, Beta)](https://testflight.apple.com/join/WHuhbecE)
+
+## Pesquisa
+
+- [Predicting Asthma Exacerbations in Digital Health Ecosystems Using Machine Learning Frameworks](https://afilaxy.com/assets/ENIAC%202026%20-%20Artigo.pdf): Artigo apresentado no BRACIS/ENIAC 2026, em parceria com a UFPI, validando um modelo de Machine Learning para prever crises de asma a partir de dados já coletados pelo Afilaxy.
+
+## Código
+
+- [Repositório no GitHub](https://github.com/herb-sin/afilaxy-kmm)
