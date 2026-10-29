@@ -174,6 +174,7 @@ export default function Home() {
             <p className="mt-4 text-sm text-white/60">
               Estamos em fase de coleta de dados rotulados para treinar nosso futuro modelo de Machine Learning supervisionado.
             </p>
+            <h3 className="mt-8 text-lg font-bold text-white">Publicação científica no ENIAC/BRACIS</h3>
             <img src="/assets/photos/ENIAC 2026.jpeg" alt="Herbert Jung Sin e Martony Demes da Silva apresentando o pôster da pesquisa no BRACIS/ENIAC 2026"
               width={700} height={525} className="mx-auto mt-6 w-full max-w-md rounded-card shadow-lg" loading="lazy" />
             <p className="mt-6 text-white/90 leading-relaxed max-w-3xl mx-auto">
