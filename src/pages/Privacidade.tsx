@@ -145,6 +145,11 @@ export default function Privacidade() {
               <strong>Ahrefs Web Analytics</strong> — estatísticas de audiência do site institucional
               (afilaxy.com). Não usa cookies e não coleta dados pessoais identificáveis.
             </li>
+            <li>
+              <strong>Microsoft Clarity</strong> — gravação de sessões e mapas de calor de uso do site
+              institucional (afilaxy.com), para entender como os visitantes navegam pela página. Usa
+              cookies e mascara automaticamente campos de formulário e conteúdo sensível.
+            </li>
           </ul>
           <p>Nenhum dos processadores recebe dados do Perfil Médico autodeclarado ou dados de localização precisa do Usuário.</p>
 
