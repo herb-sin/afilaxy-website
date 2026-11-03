@@ -95,9 +95,18 @@ async function main() {
   try {
     for (const route of ROUTES) {
       const page = await browser.newPage()
+      // Bloqueia o Clarity: sem isso, cada build gera uma sessão falsa (o Chromium
+      // headless visitando as rotas) nas métricas do site.
+      await page.route(/clarity\.ms/, (r) => r.abort())
       await page.goto(`http://localhost:${PORT}${route.path}`, { waitUntil: 'networkidle' })
       // Espera o conteúdo real aparecer antes de capturar o HTML.
       await page.waitForSelector('h1', { timeout: 10000 }).catch(() => {})
+      // Remove as <script src="…clarity.ms…"> que o snippet do index.html injeta ao rodar.
+      // Se ficassem no HTML gravado, o Clarity carregaria duas vezes para o visitante
+      // (as tags gravadas + o snippet rodando de novo): "CL001 Multiple Clarity tags".
+      await page.evaluate(() => {
+        document.querySelectorAll('script[src*="clarity.ms"]').forEach((s) => s.remove())
+      })
       const html = await page.content()
       const outPath = path.join(distDir, route.out)
       await mkdir(path.dirname(outPath), { recursive: true })
