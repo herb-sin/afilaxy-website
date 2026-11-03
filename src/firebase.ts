@@ -2,7 +2,6 @@ import { initializeApp } from 'firebase/app'
 import { getAuth, signInAnonymously } from 'firebase/auth'
 import { getFunctions, httpsCallable } from 'firebase/functions'
 import { getFirestore, collection, addDoc, serverTimestamp } from 'firebase/firestore'
-import { initializeAppCheck, ReCaptchaV3Provider } from 'firebase/app-check'
 
 const app = initializeApp({
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
@@ -13,10 +12,10 @@ const app = initializeApp({
   appId: import.meta.env.VITE_FIREBASE_APP_ID,
 })
 
-initializeAppCheck(app, {
-  provider: new ReCaptchaV3Provider(import.meta.env.VITE_RECAPTCHA_SITE_KEY),
-  isTokenAutoRefreshEnabled: true,
-})
+// App Check (reCAPTCHA v3) desativado: o reCAPTCHA passou a dar timeout e, como o Auth
+// espera o token antes de cada requisição, derrubava o formulário de leads. O Firestore
+// não exige App Check hoje, então ele não protegia nada. Reativar junto com a Cloud
+// Function de leads, de forma que uma falha do reCAPTCHA não bloqueie o envio.
 
 export const auth = getAuth(app)
 export const db = getFirestore(app)
