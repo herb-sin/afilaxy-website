@@ -1,7 +1,7 @@
 import { initializeApp } from 'firebase/app'
 import { getAuth, signInAnonymously } from 'firebase/auth'
 import { getFunctions, httpsCallable } from 'firebase/functions'
-import { getFirestore, collection, addDoc, serverTimestamp } from 'firebase/firestore'
+import { getFirestore } from 'firebase/firestore'
 
 const app = initializeApp({
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
@@ -25,12 +25,15 @@ export async function ensureAuth() {
   if (!auth.currentUser) await signInAnonymously(auth)
 }
 
+// Grava pela Cloud Function submitLead (validação, limite por IP e aviso por e-mail no
+// servidor) — sem login anônimo e sem escrita direta do navegador na coleção 'leads'.
+const submitLead = httpsCallable<
+  { name: string; email: string; phone?: string; crm?: string; cnpj?: string; plan: string; type: 'medico' | 'clinica'; segment?: string },
+  { ok: boolean }
+>(functions, 'submitLead')
+
 export async function saveLead(data: { name: string; email: string; phone?: string; crm?: string; cnpj?: string; plan: string; type: 'medico' | 'clinica'; segment?: string }) {
-  await ensureAuth()
-  return addDoc(collection(db, 'leads'), {
-    ...data,
-    createdAt: serverTimestamp(),
-  })
+  return submitLead(data)
 }
 
 export const validateCrm = httpsCallable<
