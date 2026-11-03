@@ -5,7 +5,7 @@ export default function Privacidade() {
     <div className="pt-24">
       <section className="bg-gradient-to-br from-gray-50 to-teal-50 py-16 text-center">
         <h1 className="text-4xl font-bold text-secondary">Política de Privacidade</h1>
-        <p className="mt-2 text-muted">AFILAXY — Última atualização: julho de 2026</p>
+        <p className="mt-2 text-muted">AFILAXY — Última atualização: novembro de 2026</p>
       </section>
 
       <section className="py-16">
@@ -105,6 +105,15 @@ export default function Privacidade() {
             técnico e melhoria dos serviços.
           </p>
 
+          <h3 className="mt-4 text-lg font-semibold text-secondary">2.9 Profissionais Interessados (formulário do site)</h3>
+          <p>
+            Ao demonstrar interesse em ser parceiro pela página de Profissionais, coletamos nome,
+            e-mail, telefone, CRM ou CNPJ, plano e especialidade informados no formulário. Esses
+            dados são usados apenas para entrarmos em contato sobre a parceria. Para evitar envios
+            abusivos, o endereço IP é usado de forma transformada (não reversível) para limitar o
+            número de envios por dia, sem armazenamento do IP original.
+          </p>
+
           <h2 className="mt-8 text-2xl font-bold text-secondary">3. Base Legal para o Tratamento</h2>
           <ul className="list-disc space-y-1 pl-6 text-muted">
             <li><strong>Dados de cadastro e navegação</strong> — execução de contrato (art. 7º, V) e legítimo interesse (art. 7º, IX)</li>
@@ -112,6 +121,7 @@ export default function Privacidade() {
             <li><strong>Check-ins de bem-estar</strong> — execução de contrato (art. 7º, V)</li>
             <li><strong>Geolocalização em emergências</strong> — consentimento (art. 7º, I) e proteção da vida (art. 7º, VIII)</li>
             <li><strong>Dados anonimizados para pesquisa</strong> — pesquisa com garantia de anonimização (art. 7º, IV)</li>
+            <li><strong>Profissionais interessados</strong> — procedimentos preliminares a contrato, a pedido do titular (art. 7º, V)</li>
           </ul>
 
           <h2 className="mt-8 text-2xl font-bold text-secondary">4. Compartilhamento de Dados</h2>
@@ -132,6 +142,10 @@ export default function Privacidade() {
             <li>
               <strong>Firebase / Google LLC</strong> — autenticação, banco de dados em nuvem e
               notificações push (FCM). Recebe dados de conta, check-ins, perfil e tokens de sessão.
+            </li>
+            <li>
+              <strong>Gmail / Google LLC</strong> — envio, à própria AFILAXY, do aviso de cada novo
+              profissional interessado. Recebe os dados informados no formulário de Profissionais.
             </li>
             <li>
               <strong>WAQI (World Air Quality Index)</strong> — dados de qualidade do ar (AQI).
