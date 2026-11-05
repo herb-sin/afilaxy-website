@@ -18,7 +18,7 @@ O Afilaxy não realiza diagnóstico médico. O Índice de Bem-Estar e Risco é u
 
 ## Pesquisa
 
-- [Predicting Asthma Exacerbations in Digital Health Ecosystems Using Machine Learning Frameworks](https://afilaxy.com/assets/ENIAC%202026%20-%20Artigo.pdf): Artigo apresentado no BRACIS/ENIAC 2026, em parceria com a UFPI, validando um modelo de Machine Learning para prever crises de asma a partir de dados já coletados pelo Afilaxy.
+- [Predicting Asthma Exacerbations in Digital Health Ecosystems Using Machine Learning Frameworks](https://afilaxy.com/assets/ENIAC%202026%20-%20Artigo.pdf): Artigo apresentado no BRACIS/ENIAC 2026, em parceria com a UFPI. Prova de conceito que avalia modelos de Machine Learning para triagem do risco de crise de asma, em dados sintéticos que emulam as informações coletadas pelo Afilaxy. Versão corrigida; errata em https://github.com/herb-sin/afilaxy-ml/blob/main/ERRATA.md
 
 ## Código
 

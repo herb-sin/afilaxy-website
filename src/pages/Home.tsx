@@ -178,18 +178,23 @@ export default function Home() {
             <img src="/assets/photos/ENIAC 2026.jpeg" alt="Herbert Jung Sin e Martony Demes da Silva apresentando o pôster da pesquisa no BRACIS/ENIAC 2026"
               width={700} height={525} className="mx-auto mt-6 w-full max-w-md rounded-card shadow-lg" loading="lazy" />
             <p className="mt-6 text-white/90 leading-relaxed max-w-3xl mx-auto">
-              Em outubro de 2026, apresentamos os primeiros resultados desse modelo no <strong className="text-white">BRACIS/ENIAC 2026</strong>, em parceria com a UFPI: testamos 4 algoritmos de Machine Learning, e o melhor deles identificou risco de crise com 91,3% de precisão (AUC), usando justamente dados que o Afilaxy já coleta hoje, como os acionamentos do botão de emergência. É uma prova de conceito sobre dados sintéticos — o próximo passo é validar o modelo com dados reais dos usuários.
+              Em outubro de 2026, apresentamos os primeiros resultados desse modelo no <strong className="text-white">BRACIS/ENIAC 2026</strong>, em parceria com a UFPI: testamos 4 algoritmos de Machine Learning, e o melhor deles alcançou AUC de 91,3% na identificação do risco de crise, usando o mesmo tipo de informação que o Afilaxy já coleta hoje, como os acionamentos do botão de emergência. É uma prova de conceito sobre dados sintéticos — o próximo passo é validar o modelo com dados reais dos usuários.
             </p>
             <div className="mt-5 flex flex-wrap justify-center gap-3">
               <a href="/assets/ENIAC 2026 - Artigo.pdf" target="_blank" rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-pill bg-white/15 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/25">
-                📄 Ler o artigo (PDF)
+                📄 Ler o artigo corrigido (PDF)
               </a>
               <a href="/assets/ENIAC 2026 - Poster.pdf" target="_blank" rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-pill bg-white/15 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/25">
                 🖼️ Ver o pôster (PDF)
               </a>
             </div>
+            <p className="mt-4 text-sm text-white/60 max-w-3xl mx-auto">
+              <strong className="text-white/80">Errata:</strong> a versão publicada nos anais e o pôster citam duas referências que não existem (Alotaibi et al., 2020; Patel et al., 2021). O artigo disponível aqui já está corrigido, e os resultados não mudam.{' '}
+              <a href="https://github.com/herb-sin/afilaxy-ml/blob/main/ERRATA.md" target="_blank" rel="noopener noreferrer"
+                className="underline hover:text-white">Ver a errata completa</a>.
+            </p>
           </div>
         </div>
       </section>
