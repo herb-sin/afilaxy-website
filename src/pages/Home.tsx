@@ -185,15 +185,13 @@ export default function Home() {
                 className="inline-flex items-center gap-2 rounded-pill bg-white/15 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/25">
                 📄 Ler o artigo corrigido (PDF)
               </a>
-              <a href="/assets/ENIAC 2026 - Poster.pdf" target="_blank" rel="noopener noreferrer"
+              <a href="https://sol.sbc.org.br/index.php/eniac/article/view/46847" target="_blank" rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-pill bg-white/15 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/25">
-                🖼️ Ver o pôster (PDF)
+                🏛️ Ver a versão publicada (SOL)
               </a>
             </div>
             <p className="mt-4 text-sm text-white/60 max-w-3xl mx-auto">
-              <strong className="text-white/80">Errata:</strong> a versão publicada nos anais e o pôster citam duas referências que não existem (Alotaibi et al., 2020; Patel et al., 2021). O artigo disponível aqui já está corrigido, e os resultados não mudam.{' '}
-              <a href="https://github.com/herb-sin/afilaxy-ml/blob/main/ERRATA.md" target="_blank" rel="noopener noreferrer"
-                className="underline hover:text-white">Ver a errata completa</a>.
+              <strong className="text-white/80">Errata:</strong> a versão publicada nos anais e o pôster apresentado no evento citam duas referências que não existem (Alotaibi et al., 2020; Patel et al., 2021). A versão corrigida está disponível aqui, e os resultados não mudam.
             </p>
           </div>
         </div>
