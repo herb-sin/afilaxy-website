@@ -178,7 +178,7 @@ export default function Home() {
             <img src="/assets/photos/ENIAC 2026.jpeg" alt="Herbert Jung Sin e Martony Demes da Silva apresentando o pôster da pesquisa no BRACIS/ENIAC 2026"
               width={700} height={525} className="mx-auto mt-6 w-full max-w-md rounded-card shadow-lg" loading="lazy" />
             <p className="mt-6 text-white/90 leading-relaxed max-w-3xl mx-auto">
-              Apresentação dos primeiros resultados do modelo no <strong className="text-white">BRACIS/ENIAC 2026</strong>, em parceria com a UFPI.
+              Apresentação da prova de conceito da nossa pesquisa no <strong className="text-white">BRACIS/ENIAC 2026</strong>, em parceria com a UFPI.
             </p>
             <div className="mt-5 flex flex-wrap justify-center gap-3">
               <a href="/assets/ENIAC 2026 - Artigo.pdf" target="_blank" rel="noopener noreferrer"
@@ -191,7 +191,9 @@ export default function Home() {
               </a>
             </div>
             <p className="mt-4 text-sm text-white/60 max-w-3xl mx-auto">
-              <strong className="text-white/80">Errata:</strong> a versão publicada nos anais e o pôster apresentado no evento citam duas referências que não existem (Alotaibi et al., 2020; Patel et al., 2021). A versão corrigida está disponível aqui, e os resultados não mudam.
+              <strong className="text-white/80">Errata e adendo:</strong> a versão publicada nos anais e o pôster apresentado no evento citam duas referências que não existem (Alotaibi et al., 2020; Patel et al., 2021), corrigidas na versão disponível aqui. Um estudo posterior mostrou ainda que o desempenho do modelo vinha de variáveis sintéticas derivadas do próprio rótulo: os resultados demonstram o método, mas não a capacidade de prever crises, que será avaliada com dados reais.{' '}
+              <a href="https://github.com/herb-sin/afilaxy-ml/blob/main/ERRATA.md" target="_blank" rel="noopener noreferrer"
+                className="font-semibold text-white/90 underline hover:text-white">Detalhes no GitHub</a>.
             </p>
           </div>
         </div>
