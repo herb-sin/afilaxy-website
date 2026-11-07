@@ -191,7 +191,10 @@ export default function Home() {
               </a>
             </div>
             <p className="mt-4 text-sm text-white/60 max-w-3xl mx-auto">
-              <strong className="text-white/80">Errata e adendo:</strong> a versão publicada nos anais e o pôster apresentado no evento citam duas referências que não existem (Alotaibi et al., 2020; Patel et al., 2021), corrigidas na versão disponível aqui. Um estudo posterior mostrou ainda que o desempenho do modelo vinha de variáveis sintéticas derivadas do próprio rótulo: os resultados demonstram o método, mas não a capacidade de prever crises, que será avaliada com dados reais.{' '}
+              <strong className="text-white/80">Errata:</strong> a versão publicada nos anais e o pôster citam duas referências que não existem (Alotaibi et al., 2020; Patel et al., 2021), corrigidas na versão disponível acima.
+            </p>
+            <p className="mt-2 text-sm text-white/60 max-w-3xl mx-auto">
+              <strong className="text-white/80">Adendo:</strong> um estudo posterior mostrou que o desempenho do modelo vinha de variáveis sintéticas derivadas do próprio rótulo. Os resultados demonstram o método, mas não a capacidade de prever crises, que será avaliada com dados reais.{' '}
               <a href="https://github.com/herb-sin/afilaxy-ml/blob/main/ERRATA.md" target="_blank" rel="noopener noreferrer"
                 className="font-semibold text-white/90 underline hover:text-white">Detalhes no GitHub</a>.
             </p>
