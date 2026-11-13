@@ -145,7 +145,7 @@ export default function Home() {
           {/* Aviso regulatório inline */}
           <div className="mt-10 rounded-card border border-yellow-200 bg-yellow-50 p-5 text-center text-sm text-yellow-800">
             <p>
-              ⚠️ <strong>Aviso importante:</strong> o Afilaxy é uma ferramenta de apoio comunitário e não substitui a orientação médica. O Índice de Bem-Estar e Risco é uma pontuação informativa para orientar o dia a dia — não um diagnóstico.
+              ⚠️ <strong>Aviso importante:</strong> o Afilaxy é uma ferramenta de apoio comunitário para pessoas maiores de 18 anos e não substitui a orientação médica. O Índice de Bem-Estar e Risco é uma pontuação informativa para orientar o dia a dia — não um diagnóstico.
             </p>
           </div>
         </div>
