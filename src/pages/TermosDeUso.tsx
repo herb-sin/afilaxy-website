@@ -5,7 +5,7 @@ export default function TermosDeUso() {
     <div className="pt-24">
       <section className="bg-gradient-to-br from-gray-50 to-teal-50 py-16 text-center">
         <h1 className="text-4xl font-bold text-secondary">Termos Gerais e Condições de Uso</h1>
-        <p className="mt-2 text-muted">AFILAXY — Última atualização: julho de 2026</p>
+        <p className="mt-2 text-muted">AFILAXY — Última atualização: novembro de 2026</p>
       </section>
 
       <section className="py-16">
@@ -235,16 +235,15 @@ export default function TermosDeUso() {
 
           <h2 className="mt-8 text-2xl font-bold text-secondary">Dos Menores de Idade</h2>
           <p>
-            <strong>Cláusula 22ª.</strong> A plataforma AFILAXY é destinada a maiores de 18
-            (dezoito) anos. Reconhecendo que a asma afeta também crianças e adolescentes,
-            Usuários entre 13 (treze) e 17 (dezessete) anos poderão utilizar a plataforma
-            mediante consentimento expresso de responsável legal, que assumirá solidariamente
-            as obrigações decorrentes destes Termos.
+            <strong>Cláusula 22ª.</strong> A plataforma AFILAXY é destinada exclusivamente a
+            maiores de 18 (dezoito) anos. Ao se cadastrar, o Usuário declara ter 18 (dezoito)
+            anos ou mais.
           </p>
           <p>
-            <strong>Parágrafo único.</strong> É vedado o cadastro de menores de 13 (treze)
-            anos. A AFILAXY não coleta intencionalmente dados de crianças abaixo dessa faixa
-            etária.
+            <strong>Parágrafo único.</strong> É vedado o cadastro de menores de 18 (dezoito)
+            anos. A AFILAXY não coleta intencionalmente dados de menores de idade e, se tomar
+            conhecimento de cadastro nessa condição, procederá à exclusão da conta e dos dados
+            correspondentes.
           </p>
 
           <h2 className="mt-8 text-2xl font-bold text-secondary">Do Sigilo das Informações</h2>

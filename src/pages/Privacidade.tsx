@@ -208,11 +208,10 @@ export default function Privacidade() {
 
           <h2 className="mt-8 text-2xl font-bold text-secondary">9. Menores de Idade</h2>
           <p>
-            A AFILAXY não coleta intencionalmente dados de crianças menores de 13 (treze) anos.
-            Usuários entre 13 e 17 anos somente podem utilizar a plataforma mediante consentimento
-            expresso de responsável legal, que passa a ser solidariamente responsável pelos dados
-            fornecidos. Se tomarmos conhecimento de coleta inadvertida de dados de menor de 13 anos
-            sem consentimento do responsável, procederemos à exclusão imediata.
+            A plataforma AFILAXY é destinada exclusivamente a maiores de 18 (dezoito) anos, que
+            declaram essa condição ao se cadastrar. A AFILAXY não coleta intencionalmente dados de
+            menores de idade. Se tomarmos conhecimento de que um menor de 18 anos se cadastrou,
+            procederemos à exclusão da conta e dos dados correspondentes.
           </p>
 
           <h2 className="mt-8 text-2xl font-bold text-secondary">10. Notificações Push</h2>
