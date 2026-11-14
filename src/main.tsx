@@ -13,6 +13,7 @@ const Profissionais = lazy(() => import('./pages/Profissionais'))
 const Success = lazy(() => import('./pages/Success'))
 const Privacidade = lazy(() => import('./pages/Privacidade'))
 const TermosDeUso = lazy(() => import('./pages/TermosDeUso'))
+const GuiaInalatorio = lazy(() => import('./pages/GuiaInalatorio'))
 
 function RouteFallback() {
   return (
@@ -34,6 +35,7 @@ const app = (
             <Route path="/success" element={<Success />} />
             <Route path="/privacidade" element={<Privacidade />} />
             <Route path="/termos" element={<TermosDeUso />} />
+            <Route path="/guia-inalatorio" element={<GuiaInalatorio />} />
           </Route>
         </Routes>
       </Suspense>
